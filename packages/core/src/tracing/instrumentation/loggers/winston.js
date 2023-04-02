@@ -45,6 +45,7 @@ function instrumentWinston3(createLogger) {
     // npm levels
     shimLevelMethod(derivedLogger, 'error', true);
     shimLevelMethod(derivedLogger, 'warn', false);
+    shimLevelMethod(derivedLogger, 'info', false);
 
     // syslog levels (RFC5424)
     shimLevelMethod(derivedLogger, 'emerg', true);
@@ -63,10 +64,11 @@ function shimLevelMethod(derivedLogger, key, markAsError) {
   if (typeof originalMethod !== 'function') {
     return;
   }
-  derivedLogger[key] = instrumentedLevelMethod(originalMethod, markAsError);
+
+  derivedLogger[key] = instrumentedLevelMethod(originalMethod, markAsError, key);
 }
 
-function instrumentedLevelMethod(originalMethod, markAsError) {
+function instrumentedLevelMethod(originalMethod, markAsError, level) {
   return function (message) {
     if (cls.skipExitTracing({ isActive, log: false })) {
       return originalMethod.apply(this, arguments);
@@ -94,7 +96,7 @@ function instrumentedLevelMethod(originalMethod, markAsError) {
     }
 
     const ctx = this;
-    return createSpan(ctx, originalMethod, originalArgs, message, markAsError);
+    return createSpan(ctx, originalMethod, originalArgs, message, markAsError, level);
   };
 }
 
@@ -148,19 +150,20 @@ function instrumentedLog(originalMethod) {
 }
 
 function levelIsTraced(level) {
-  return levelIsError(level) || level === 'warn' || level === 'warning';
+  return levelIsError(level) || level === 'warn' || level === 'warning' || level === 'info';
 }
 
 function levelIsError(level) {
   return level === 'error' || level === 'emerg' || level === 'alert' || level === 'crit';
 }
 
-function createSpan(ctx, originalMethod, originalArgs, message, markAsError) {
+function createSpan(ctx, originalMethod, originalArgs, message, markAsError, level) {
   return cls.ns.runAndReturn(() => {
     const span = cls.startSpan('log.winston', constants.EXIT);
     span.stack = tracingUtil.getStackTrace(createSpan);
     span.data.log = {
-      message
+      message,
+      level
     };
     if (markAsError) {
       span.ec = 1;
