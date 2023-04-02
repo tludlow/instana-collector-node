@@ -1,5 +1,37 @@
 **IMPORTANT: THIS LIBRARY IS A FORKED VERSION OF THE @instana/collector LIBRARY TO ADD WINSTON INFO LEVEL LOGGING TO THE COLLECTOR**
 
+# How to use the forked version
+
+Establish your instana collector as normal and set the logger to winston.
+I have added the custom formatter to allow for traceIds to be logged into our other log sources too.
+
+```js
+import instana from '@instana/collector';
+instana({
+  serviceName: 'graphql-api-apollo',
+  level: 'info'
+});
+
+import winston, { format } from 'winston';
+
+const addTraceFormat = format((info, opts) => {
+  const span = instana.currentSpan();
+  info.message = `(traceId: ${span.getTraceId()}) ${info.message}`;
+  return info;
+});
+
+export const logger = winston.createLogger({
+  level: 'info',
+  defaultMeta: { service: 'graphql-api' },
+  transports: [new winston.transports.Console({ format: winston.format.simple() })],
+  format: addTraceFormat()
+});
+
+instana.setLogger(logger);
+```
+
+Then use winston logging as normal throughout your app, making sure to use the `logger` defined above as your winston logging source!
+
 # @instana/collector &nbsp; [![OpenTracing Badge](https://img.shields.io/badge/OpenTracing-enabled-blue.svg)](http://opentracing.io)
 
 Monitor your Node.js applications with Instana!
@@ -42,7 +74,11 @@ The installation of the Instana Node.js collector is a simple two step process. 
 
 ```javascript
 
+
+
 npm  install  --save @instana/collector
+
+
 
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "instana-collector-node-winston",
-  "version": "2.20.1",
+  "version": "2.20.2",
   "description": "Forked version of The Instana Node.js metrics and trace data collector to add winston logger info logs",
   "author": {
     "name": "Ben Ripkens",
