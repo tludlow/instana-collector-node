@@ -1,7 +1,7 @@
 {
-  "name": "@instana/collector",
+  "name": "@instana-collector-node-winston",
   "version": "2.20.1",
-  "description": "The Instana Node.js metrics and trace data collector",
+  "description": "Forked version of The Instana Node.js metrics and trace data collector to add winston logger info logs",
   "author": {
     "name": "Ben Ripkens",
     "email": "ben@instana.com"
