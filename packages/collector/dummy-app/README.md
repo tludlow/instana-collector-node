@@ -1,6 +1,6 @@
 # Dummy App
 
-This is a trivial Node.js application suitable for quick experiments with the @instana/collector. By default, it will
+This is a trivial Node.js application suitable for quick experiments with the @tludlow-instana-fork/collector. By default, it will
 connect to a local agent on port 42699.
 
 ## Configuring And Starting The App
@@ -28,4 +28,3 @@ INSTANA_AGENT_PORT=3210 node .
 
 1. Make sure you have [siege](https://www.joedog.org/siege-home/) installed. On most OSes it can be installed via the package manager of your choice.
 2. Run `./trigger-requests.sh`.
-

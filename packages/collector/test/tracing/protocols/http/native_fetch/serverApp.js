@@ -12,7 +12,7 @@ const morgan = require('morgan');
 
 const logPrefix = `Native Fetch Server (${process.pid}):\t`;
 
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 const app = express();
 const port = require('../../../../test_util/app-port')();

@@ -9,7 +9,7 @@ const expect = require('chai').expect;
 const sinon = require('sinon');
 const testUtils = require('../../core/test/test_util');
 const name = require('../src/name');
-const { applicationUnderMonitoring } = require('@instana/core').util;
+const { applicationUnderMonitoring } = require('@tludlow-instana-fork/core').util;
 
 describe('metrics.name', () => {
   afterEach(() => {

@@ -9,7 +9,7 @@ const fail = require('chai').assert.fail;
 const path = require('path');
 const semver = require('semver');
 
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../core/test/config');
 const { retry } = require('../../../../core/test/test_util');
 const ProcessControls = require('../../test_util/ProcessControls');

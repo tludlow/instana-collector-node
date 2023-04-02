@@ -11,7 +11,7 @@ const semver = require('semver');
 const config = require('../../../../core/test/config');
 const { delay, retry } = require('../../../../core/test/test_util');
 const ProcessControls = require('../../test_util/ProcessControls');
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const globalAgent = require('../../globalAgent');
 
 // See https://instana.kanbanize.com/ctrl_board/56/cards/48699/details/ for more details on worker threads.

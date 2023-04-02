@@ -9,7 +9,7 @@ const path = require('path');
 const { expect } = require('chai');
 const semver = require('semver');
 
-const constants = require('@instana/core').tracing.constants;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');

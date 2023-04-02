@@ -17,7 +17,7 @@ const sql = require('mssql');
 const devNull = require('dev-null');
 const port = require('../../../test_util/app-port')();
 
-const { delay, isCI } = require('@instana/core/test/test_util');
+const { delay, isCI } = require('@tludlow-instana-fork/core/test/test_util');
 
 let pool;
 const app = express();

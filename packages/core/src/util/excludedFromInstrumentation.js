@@ -8,7 +8,7 @@
 // If a process is started with `npm start` or `yarn start`, two separate processes will be started. The first is
 // `node /path/to/npm` (or `node /path/to/yarn`). This process will kick off another process with the actual application
 // (for example, `node /usr/src/app`). When
-// NODE_OPTIONS="--require /usr/src/app/node_modules/@instana/collector/src/immediate" is set, we would instrument both
+// NODE_OPTIONS="--require /usr/src/app/node_modules/@tludlow-instana-fork/collector/src/immediate" is set, we would instrument both
 // processes, that is, npm/yarn as well as the actual application. Attempting to instrument the npm or yarn process has
 // no value and also creates confusing log output, so we exclude them here explicitly.
 const excludePattern = /^.*\/(?:npm(?:\.js)?|npm-cli(?:\.js)?|yarn(?:\.js)?|yarn\/lib\/cli(?:\.js)?)$/i;

@@ -45,14 +45,14 @@ exports.init = function init(config = {}) {
     config.logger.fields &&
     config.logger.fields.__in === 1
   ) {
-    // A logger has been provided via config and it has been created by an Instana module (@instana/collector).
+    // A logger has been provided via config and it has been created by an Instana module (@tludlow-instana-fork/collector).
     // We use it as is.
     parentLogger = config.logger;
   } else if (config.logger && typeof config.logger.child === 'function') {
     // A bunyan or pino logger has been provided via config. In either case we create a child logger directly under the
     // given logger which serves as the parent for all loggers we create later on.
     parentLogger = config.logger.child({
-      module: '@instana/core',
+      module: '@tludlow-instana-fork/core',
       __in: 1
     });
   } else if (config.logger && hasLoggingFunctions(config.logger)) {

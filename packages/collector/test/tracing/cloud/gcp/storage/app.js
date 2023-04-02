@@ -16,7 +16,7 @@ const path = require('path');
 const { Storage } = require('@google-cloud/storage');
 const { v4: uuid } = require('uuid');
 
-const { isCI } = require('@instana/core/test/test_util');
+const { isCI } = require('@tludlow-instana-fork/core/test/test_util');
 
 const logPrefix = `Google Cloud Storage Client (${process.pid}):\t`;
 

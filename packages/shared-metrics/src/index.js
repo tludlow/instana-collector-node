@@ -5,7 +5,7 @@
 
 'use strict';
 
-/** @type {Array.<import('@instana/core/src/metrics').InstanaMetricsModule>} */
+/** @type {Array.<import('@tludlow-instana-fork/core/src/metrics').InstanaMetricsModule>} */
 const allMetrics = [
   require('./activeHandles'),
   require('./activeRequests'),
@@ -29,7 +29,7 @@ const allMetrics = [
 const util = require('./util');
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger} logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} logger
  */
 const setLogger = function (logger) {
   util.setLogger(logger);
@@ -37,9 +37,9 @@ const setLogger = function (logger) {
 
 /**
  * @typedef {Object} InstanaSharedMetrics
- * @property {Array.<import('@instana/core/src/metrics').InstanaMetricsModule>} allMetrics
+ * @property {Array.<import('@tludlow-instana-fork/core/src/metrics').InstanaMetricsModule>} allMetrics
  * @property {import('./util')} util
- * @property {(logger: import('@instana/core/src/logger').GenericLogger) => void} setLogger
+ * @property {(logger: import('@tludlow-instana-fork/core/src/logger').GenericLogger) => void} setLogger
  */
 
 /** @type {InstanaSharedMetrics} */

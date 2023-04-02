@@ -1,4 +1,4 @@
-**IMPORTANT: THIS LIBRARY IS A FORKED VERSION OF THE @instana/collector LIBRARY TO ADD WINSTON INFO LEVEL LOGGING TO THE COLLECTOR**
+**IMPORTANT: THIS LIBRARY IS A FORKED VERSION OF THE @tludlow-instana-fork/collector LIBRARY TO ADD WINSTON INFO LEVEL LOGGING TO THE COLLECTOR**
 
 # How to use the forked version
 
@@ -6,7 +6,7 @@ Establish your instana collector as normal and set the logger to winston.
 I have added the custom formatter to allow for traceIds to be logged into our other log sources too.
 
 ```js
-import instana from '@instana/collector';
+import instana from '@tludlow-instana-fork/collector';
 instana({
   serviceName: 'graphql-api-apollo',
   level: 'info'
@@ -32,7 +32,7 @@ instana.setLogger(logger);
 
 Then use winston logging as normal throughout your app, making sure to use the `logger` defined above as your winston logging source!
 
-# @instana/collector &nbsp; [![OpenTracing Badge](https://img.shields.io/badge/OpenTracing-enabled-blue.svg)](http://opentracing.io)
+# @tludlow-instana-fork/collector &nbsp; [![OpenTracing Badge](https://img.shields.io/badge/OpenTracing-enabled-blue.svg)](http://opentracing.io)
 
 Monitor your Node.js applications with Instana!
 
@@ -70,13 +70,13 @@ Most of this document has been moved to the [Node.js page](https://www.ibm.com/d
 
 ## Installation And Usage
 
-The installation of the Instana Node.js collector is a simple two step process. First, install the `@instana/collector` package in your application via:
+The installation of the Instana Node.js collector is a simple two step process. First, install the `@tludlow-instana-fork/collector` package in your application via:
 
 ```javascript
 
 
 
-npm  install  --save @instana/collector
+npm  install  --save @tludlow-instana-fork/collector
 
 
 
@@ -85,7 +85,7 @@ npm  install  --save @instana/collector
 Now that the collector is installed, it needs to be activated from within the application. Do this by requiring and initializing it as the _first statement_ in your application. Please take care that this is the first statement as the collector will otherwise not be able to access certain information.
 
 ```javascript
-require('@instana/collector')();
+require('@tludlow-instana-fork/collector')();
 
 // All other require statements must be done after the collector is initialized.
 
@@ -102,8 +102,8 @@ The Node.js collector uses Native addons for some metrics. Check out the [native
 
 ## API
 
-In most cases it is enough to require and initialize `@instana/collector` and let it do its work. However, there is an [API](https://www.ibm.com/docs/de/obi/current?topic=nodejs-instana-api) for more advanced use cases.
+In most cases it is enough to require and initialize `@tludlow-instana-fork/collector` and let it do its work. However, there is an [API](https://www.ibm.com/docs/de/obi/current?topic=nodejs-instana-api) for more advanced use cases.
 
 ## Filing Issues
 
-If something is not working as expected or you have a question, instead of opening an issue in this repository, please open a ticket at <https://support.instana.com/hc/requests/new> instead. Please refrain from filing issues or tickets if your audit tool (npm audit, Snyk, etc.) reported a CVE for a dependency or a transitive dependency of `@instana/collector` -- we run these audits with every build and take appropriate action automatically.
+If something is not working as expected or you have a question, instead of opening an issue in this repository, please open a ticket at <https://support.instana.com/hc/requests/new> instead. Please refrain from filing issues or tickets if your audit tool (npm audit, Snyk, etc.) reported a CVE for a dependency or a transitive dependency of `@tludlow-instana-fork/collector` -- we run these audits with every build and take appropriate action automatically.

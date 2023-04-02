@@ -8,7 +8,7 @@
 require('../../../../../..')();
 const agentPort = process.env.INSTANA_AGENT_PORT || 42699;
 const fetch = require('node-fetch');
-const delay = require('@instana/core/test/test_util/delay');
+const delay = require('@tludlow-instana-fork/core/test/test_util/delay');
 
 const AWS = require('aws-sdk');
 const express = require('express');
@@ -17,7 +17,7 @@ AWS.config.update({ region: 'us-east-2' });
 const sns = new AWS.SNS();
 
 const topicArn = process.env.AWS_SNS_TOPIC_ARN || 'arn:aws:sns:us-east-2:410797082306:nodejs-team';
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 const operationParams = {
   publish: {

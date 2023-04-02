@@ -19,7 +19,7 @@ const app = express();
 import getAppPort from '../../../../../test_util/app-port.js';
 const port = getAppPort();
 
-import log from '@instana/core/test/test_util/log.js';
+import log from '@tludlow-instana-fork/core/test/test_util/log.js';
 const logger = log.getLogger(logPrefix);
 
 const bucketName = process.env.AWS_S3_BUCKET_NAME || 'nodejs-team';

@@ -8,7 +8,7 @@
 const expect = require('chai').expect;
 const { fail } = expect;
 const semver = require('semver');
-const constants = require('@instana/core').tracing.constants;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
 const config = require('../../../../../core/test/config');
 const {
   stringifyItems,
@@ -17,7 +17,7 @@ const {
   retry,
   delay
 } = require('../../../../../core/test/test_util');
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const ProcessControls = require('../../../test_util/ProcessControls');
 const globalAgent = require('../../../globalAgent');
 const mochaSuiteFn = supportedVersion(process.versions.node) ? describe : describe.skip;

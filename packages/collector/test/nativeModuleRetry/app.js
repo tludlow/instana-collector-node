@@ -6,7 +6,7 @@
 'use strict';
 
 const instana = require('../..');
-// In prodction, @instana/shared-metrics is in a path like node_modules/@instana/shared-metrics and nativeModuleRetry
+// In prodction, @tludlow-instana-fork/shared-metrics is in a path like node_modules/@tludlow-instana-fork/shared-metrics and nativeModuleRetry
 // relies on that structure. In this test scenario, it is in packages/shared-metrics and we need to work around this.
 instana.sharedMetrics.util.nativeModuleRetry.selfNodeModulesPath = require('path').join(
   __dirname,

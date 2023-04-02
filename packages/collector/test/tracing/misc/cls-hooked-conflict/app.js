@@ -13,7 +13,7 @@ const morgan = require('morgan');
 const pino = require('pino')();
 
 const logPrefix = `cls-hooked-no-conflict (${process.pid}):\t`;
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 const app = express();
 const port = require('../../../test_util/app-port')();
@@ -31,7 +31,7 @@ function requestContextFactory() {
   return function requestContext(req, res, next) {
     namespace.run(() => {
       // Binding the request/IncomingMessage object as an event emitter would break the cls based context tracking in
-      // @instana/core prior until version 1.137.2.
+      // @tludlow-instana-fork/core prior until version 1.137.2.
       namespace.bindEmitter(req);
 
       // Binding the response does not have an effect on the issue, but we do it here for completeness sake.

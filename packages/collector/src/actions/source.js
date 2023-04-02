@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('actions/source', newLogger => {
   logger = newLogger;

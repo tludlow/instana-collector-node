@@ -15,7 +15,7 @@ const agentPort = process.env.INSTANA_AGENT_PORT || 42699;
 import request from 'request-promise';
 import AWS from 'aws-sdk';
 const logPrefix = `AWS SDK v2 Kinesis (${process.pid}):\t`;
-import log from '@instana/core/test/test_util/log.js';
+import log from '@tludlow-instana-fork/core/test/test_util/log.js';
 const logger = log.getLogger(logPrefix);
 
 AWS.config.update({ region: 'us-east-2' });

@@ -324,7 +324,7 @@ class ProcessControls {
       //
       // This can be reproduced locally via
       //
-      // cd packages/collector && WITH_STDOUT=true npm_package_name=@instana/collector ../../node_modules/.bin/nyc mocha --config=test/.mocharc.js --require test/hooks.js test/tracing/database/prisma/test.js
+      // cd packages/collector && WITH_STDOUT=true npm_package_name=@tludlow-instana-fork/collector ../../node_modules/.bin/nyc mocha --config=test/.mocharc.js --require test/hooks.js test/tracing/database/prisma/test.js
       //
       // This seems to be related to the hooks installed by Prisma in
       // packages/collector/test/tracing/database/prisma/node_modules/@prisma/client/runtime/index.js, line 26888:

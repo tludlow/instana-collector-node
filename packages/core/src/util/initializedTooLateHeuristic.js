@@ -68,8 +68,8 @@ let patterns = [
 
 const extraPatterns = [
   // The following patterns are excluded when @contrast/agent (which also comes with the requirement to be loaded before
-  // everything else) is already loaded before @instana/core. This is to avoid false positive warnings about
-  // @instana/core being initialized too late.
+  // everything else) is already loaded before @tludlow-instana-fork/core. This is to avoid false positive warnings about
+  // @tludlow-instana-fork/core being initialized too late.
   /\/bluebird\/js\/release\//,
   /\/request\/index.js/,
   /\/winston\/lib\/winston.js/
@@ -90,7 +90,7 @@ module.exports = function hasThePackageBeenInitializedTooLate() {
     } else {
       logger.debug(
         // eslint-disable-next-line max-len
-        'Found @contrast/agent in the modules that have already been loaded. @instana/core will therefore exclude bluebird, request and winston from the check for modules that have been loaded before @instana/core.'
+        'Found @contrast/agent in the modules that have already been loaded. @tludlow-instana-fork/core will therefore exclude bluebird, request and winston from the check for modules that have been loaded before @tludlow-instana-fork/core.'
       );
     }
 
@@ -100,7 +100,7 @@ module.exports = function hasThePackageBeenInitializedTooLate() {
           hasBeenInitializedTooLate = true;
           logger.debug(
             // eslint-disable-next-line max-len
-            `Found a module that has been loaded before @instana/core but should have been loaded afterwards: ${loadedModules[i]}.`
+            `Found a module that has been loaded before @tludlow-instana-fork/core but should have been loaded afterwards: ${loadedModules[i]}.`
           );
         }
       }

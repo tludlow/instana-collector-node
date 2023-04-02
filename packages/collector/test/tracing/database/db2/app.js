@@ -12,7 +12,7 @@ const express = require('express');
 const fs = require('fs');
 const morgan = require('morgan');
 const ibmdb = require('ibm_db');
-const { isCI } = require('@instana/core/test/test_util');
+const { isCI } = require('@tludlow-instana-fork/core/test/test_util');
 
 const app = express();
 const port = require('../../../test_util/app-port')();

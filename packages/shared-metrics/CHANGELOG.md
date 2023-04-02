@@ -26,15 +26,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **shared-metrics:** Reverted package-lock.json changes ([f137b3f](https://github.com/instana/nodejs/commit/f137b3ffe95f562415b5eaed7fc50d4d1a411446))
 * **test:** make version check more lenient ([d5b37e3](https://github.com/instana/nodejs/commit/d5b37e336c7c524bcdc4a155e5f393a34ae0467b))
 * bypass native addon loading in worker threads ([a4b6443](https://github.com/instana/nodejs/commit/a4b644308ee31efceae508958736e5e190ebe928))
-* depend on exact versions of [@instana](https://github.com/instana) packages, not a version range ([9caa708](https://github.com/instana/nodejs/commit/9caa708ac164d69f3f5fa7645c504d54813aedae))
-* do not fail if @instana/autoprofile is missing ([bc0be0a](https://github.com/instana/nodejs/commit/bc0be0ae1a298856322b93fd170a0e861b382e36))
+* depend on exact versions of [@tludlow-instana-fork](https://github.com/instana) packages, not a version range ([9caa708](https://github.com/instana/nodejs/commit/9caa708ac164d69f3f5fa7645c504d54813aedae))
+* do not fail if @tludlow-instana-fork/autoprofile is missing ([bc0be0a](https://github.com/instana/nodejs/commit/bc0be0ae1a298856322b93fd170a0e861b382e36))
 * downgrade to tar@5 because of Node.js compatibility ([810194a](https://github.com/instana/nodejs/commit/810194aa8244a8f4bf6eb628aacb6f36528ef690))
 
 
 ### Features
 
 * added node 18 support ([#529](https://github.com/instana/nodejs/issues/529)) ([b355a7c](https://github.com/instana/nodejs/commit/b355a7ca225bf9a06841619aae64bdefa1c0957a))
-* **fargate:** add support for Fargate via @instana/aws-fargate (alpha) ([1211193](https://github.com/instana/nodejs/commit/1211193f416422ecf0f6fd52b13a930971c4c71e))
+* **fargate:** add support for Fargate via @tludlow-instana-fork/aws-fargate (alpha) ([1211193](https://github.com/instana/nodejs/commit/1211193f416422ecf0f6fd52b13a930971c4c71e))
 * **metrics:** limit the number of collected dependencies ([2970bef](https://github.com/instana/nodejs/commit/2970bef8d7d750d6b48f0b1b52f30f4e87b117ec))
 * **metrics:** load native dependencies lazily if necessary (plus retry) ([d6af8e4](https://github.com/instana/nodejs/commit/d6af8e4a519bdcff183ea1c5f02f4479a3bfeb02))
 * **metrics:** rebuilding native add-ons via node-gyp as opt-in ([3f6ab8f](https://github.com/instana/nodejs/commit/3f6ab8fc1158003d4c5ae911cc9c6b14e8bae675))
@@ -54,7 +54,7 @@ to receive updates in the future.
 
 ## [2.20.1](https://github.com/instana/nodejs/compare/v2.20.0...v2.20.1) (2023-03-30)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -62,7 +62,7 @@ to receive updates in the future.
 
 # [2.20.0](https://github.com/instana/nodejs/compare/v2.19.0...v2.20.0) (2023-03-24)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -70,7 +70,7 @@ to receive updates in the future.
 
 # [2.19.0](https://github.com/instana/nodejs/compare/v2.18.1...v2.19.0) (2023-03-17)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -78,7 +78,7 @@ to receive updates in the future.
 
 ## [2.18.1](https://github.com/instana/nodejs/compare/v2.18.0...v2.18.1) (2023-03-06)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -86,7 +86,7 @@ to receive updates in the future.
 
 # [2.18.0](https://github.com/instana/nodejs/compare/v2.17.0...v2.18.0) (2023-02-28)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -94,7 +94,7 @@ to receive updates in the future.
 
 # [2.17.0](https://github.com/instana/nodejs/compare/v2.16.0...v2.17.0) (2023-02-20)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -102,7 +102,7 @@ to receive updates in the future.
 
 # [2.16.0](https://github.com/instana/nodejs/compare/v2.15.0...v2.16.0) (2023-02-13)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -110,7 +110,7 @@ to receive updates in the future.
 
 # [2.15.0](https://github.com/instana/nodejs/compare/v2.14.2...v2.15.0) (2023-01-27)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -118,7 +118,7 @@ to receive updates in the future.
 
 ## [2.14.2](https://github.com/instana/nodejs/compare/v2.14.1...v2.14.2) (2023-01-16)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -137,7 +137,7 @@ to receive updates in the future.
 
 # [2.14.0](https://github.com/instana/nodejs/compare/v2.13.2...v2.14.0) (2023-01-02)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -145,7 +145,7 @@ to receive updates in the future.
 
 ## [2.13.2](https://github.com/instana/nodejs/compare/v2.13.1...v2.13.2) (2022-12-14)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -153,7 +153,7 @@ to receive updates in the future.
 
 ## [2.13.1](https://github.com/instana/nodejs/compare/v2.13.0...v2.13.1) (2022-12-12)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -161,7 +161,7 @@ to receive updates in the future.
 
 # [2.13.0](https://github.com/instana/nodejs/compare/v2.12.0...v2.13.0) (2022-12-07)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -169,7 +169,7 @@ to receive updates in the future.
 
 # [2.12.0](https://github.com/instana/nodejs/compare/v2.11.1...v2.12.0) (2022-11-22)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -177,7 +177,7 @@ to receive updates in the future.
 
 ## [2.11.1](https://github.com/instana/nodejs/compare/v2.11.0...v2.11.1) (2022-11-09)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -185,7 +185,7 @@ to receive updates in the future.
 
 # [2.11.0](https://github.com/instana/nodejs/compare/v2.10.0...v2.11.0) (2022-11-04)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -193,7 +193,7 @@ to receive updates in the future.
 
 # [2.10.0](https://github.com/instana/nodejs/compare/v2.9.0...v2.10.0) (2022-10-06)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -201,7 +201,7 @@ to receive updates in the future.
 
 # [2.9.0](https://github.com/instana/nodejs/compare/v2.8.1...v2.9.0) (2022-09-26)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -209,7 +209,7 @@ to receive updates in the future.
 
 ## [2.8.1](https://github.com/instana/nodejs/compare/v2.8.0...v2.8.1) (2022-09-21)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -217,7 +217,7 @@ to receive updates in the future.
 
 # [2.8.0](https://github.com/instana/nodejs/compare/v2.7.1...v2.8.0) (2022-09-20)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -225,7 +225,7 @@ to receive updates in the future.
 
 ## [2.7.1](https://github.com/instana/nodejs/compare/v2.7.0...v2.7.1) (2022-09-05)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -244,7 +244,7 @@ to receive updates in the future.
 
 ## 2.6.2 (2022-08-17)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -252,7 +252,7 @@ to receive updates in the future.
 
 ## [2.6.1](https://github.com/instana/nodejs/compare/v2.6.0...v2.6.1) (2022-08-09)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -260,7 +260,7 @@ to receive updates in the future.
 
 # [2.6.0](https://github.com/instana/nodejs/compare/v2.5.0...v2.6.0) (2022-06-28)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -268,7 +268,7 @@ to receive updates in the future.
 
 # [2.5.0](https://github.com/instana/nodejs/compare/v2.4.0...v2.5.0) (2022-06-23)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -287,7 +287,7 @@ to receive updates in the future.
 
 # [2.3.0](https://github.com/instana/nodejs/compare/v2.2.0...v2.3.0) (2022-05-24)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -295,7 +295,7 @@ to receive updates in the future.
 
 # [2.2.0](https://github.com/instana/nodejs/compare/v2.1.0...v2.2.0) (2022-05-18)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -303,7 +303,7 @@ to receive updates in the future.
 
 # [2.1.0](https://github.com/instana/nodejs/compare/v2.0.0...v2.1.0) (2022-04-28)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -363,7 +363,7 @@ to receive updates in the future.
 
 # [1.138.0](https://github.com/instana/nodejs/compare/v1.137.5...v1.138.0) (2022-02-08)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -371,7 +371,7 @@ to receive updates in the future.
 
 ## [1.137.5](https://github.com/instana/nodejs/compare/v1.137.4...v1.137.5) (2022-01-25)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -379,7 +379,7 @@ to receive updates in the future.
 
 ## [1.137.4](https://github.com/instana/nodejs/compare/v1.137.3...v1.137.4) (2022-01-11)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -387,7 +387,7 @@ to receive updates in the future.
 
 ## [1.137.3](https://github.com/instana/nodejs/compare/v1.137.2...v1.137.3) (2021-12-16)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 
@@ -395,7 +395,7 @@ to receive updates in the future.
 
 ## [1.137.2](https://github.com/instana/nodejs/compare/v1.137.1...v1.137.2) (2021-11-30)
 
-**Note:** Version bump only for package @instana/shared-metrics
+**Note:** Version bump only for package @tludlow-instana-fork/shared-metrics
 
 
 

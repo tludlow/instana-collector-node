@@ -5,7 +5,7 @@
 
 'use strict';
 
-const { http } = require('@instana/core').uninstrumentedHttp;
+const { http } = require('@tludlow-instana-fork/core').uninstrumentedHttp;
 const agentOpts = require('./opts');
 
 /**

@@ -2,7 +2,7 @@
 // TypeScript compiler (tsc), and in particular if you use it to transpile ES6 `import` statements. Just putting
 // something like this at the top of your main file will not work in such a setup:
 //
-//     import instana from '@instana/collector';
+//     import instana from '@tludlow-instana-fork/collector';
 //
 //     instana();
 //
@@ -13,7 +13,7 @@
 // statments will be put after the imports. As a consequence, the import for `express` in this example will be placed
 // before the `instana();` call. You will end up with something like this in your transpiled file:
 //
-//     var _instana = _interopRequireDefault(require("@instana/collector"));
+//     var _instana = _interopRequireDefault(require("@tludlow-instana-fork/collector"));
 //
 //     var _express = _interopRequireDefault(require("express"));
 //
@@ -25,7 +25,7 @@
 //
 //     ...
 //
-// As you can see, the actual call to the @instana/collector's init function comes after all require statements in the
+// As you can see, the actual call to the @tludlow-instana-fork/collector's init function comes after all require statements in the
 // transpiled file.
 //
 // Instead, you can do something like this:
@@ -40,17 +40,17 @@
 //
 //     // The following statement is optional; it is only required if you want to use
 //     // Instana's Node.js API (https://www.ibm.com/docs/de/obi/current?topic=nodejs-instana-api):
-//     @ts-ignore (in case you are using TypeScript, to avoid 'Could not find a declaration for '@instana/collector')
-//     import instana from '@instana/collector';
+//     @ts-ignore (in case you are using TypeScript, to avoid 'Could not find a declaration for '@tludlow-instana-fork/collector')
+//     import instana from '@tludlow-instana-fork/collector';
 //
 // The file `instanaInit.js` (or `instanaInit.ts` if you use TypeScript) should just have this one statement:
 //
-//     require('@instana/collector')();
+//     require('@tludlow-instana-fork/collector')();
 //
 // This way, the init function is called right away when the process starts.
 //
 // In general, when using any transpiler, it is a good idea to inspect the transpiled sources when
-// integrating @instana/collector.
+// integrating @tludlow-instana-fork/collector.
 
 // Put this import at the top of your main file. Only the import here,
 // don't change this to "import instana from './instanaInit'"!
@@ -63,7 +63,7 @@ import morgan from 'morgan';
 // The following statement is optional; it is only required if you want to use
 // Instana's Node.js API (https://www.ibm.com/docs/de/obi/current?topic=nodejs-instana-api):
 // @ts-ignore
-import instana from '@instana/collector';
+import instana from '@tludlow-instana-fork/collector';
 
 // @ts-ignore
 import getAppPort from '../../../test_util/app-port.js';

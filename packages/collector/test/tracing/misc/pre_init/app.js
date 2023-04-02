@@ -14,13 +14,13 @@ const logPrefix = `PreInit (${process.env.INSTANA_EARLY_INSTRUMENTATION === 'tru
 
 const http = require('http');
 
-// Deliberately requiring pino _before_ calling @instana/collector#init.
+// Deliberately requiring pino _before_ calling @tludlow-instana-fork/collector#init.
 const pino = require('pino')();
 
 const port = require('../../../test_util/app-port')();
 const app = new http.Server();
 
-// Only calling @instana/collector#init now, after require statements (and in particular, _after_ requiring pino).
+// Only calling @tludlow-instana-fork/collector#init now, after require statements (and in particular, _after_ requiring pino).
 instana();
 
 app.on('request', (req, res) => {

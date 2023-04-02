@@ -21,9 +21,9 @@ const express = require('express');
 const fetch = require('node-fetch');
 const awsSdk3 = require('@aws-sdk/client-sqs');
 const logPrefix = `AWS SDK v3 SQS Receiver (${process.pid}):\t`;
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
-const delay = require('@instana/core/test/test_util/delay');
-const { sendToParent } = require('@instana/core/test/test_util');
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
+const delay = require('@tludlow-instana-fork/core/test/test_util/delay');
+const { sendToParent } = require('@tludlow-instana-fork/core/test/test_util');
 const CollectingLogger = require('../../../../../test_util/CollectingLogger');
 const TeeLogger = require('../../../../../test_util/TeeLogger');
 

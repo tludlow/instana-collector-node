@@ -9,6 +9,6 @@ set -eo pipefail
 
 cd `dirname $BASH_SOURCE`/..
 source ../../bin/add-to-package-lock
-addToPackageLock package-lock.json @instana/core false
-addToPackageLock package-lock.json @instana/autoprofile false
-addToPackageLock package-lock.json @instana/shared-metrics false
+addToPackageLock package-lock.json @tludlow-instana-fork/core false
+addToPackageLock package-lock.json @tludlow-instana-fork/autoprofile false
+addToPackageLock package-lock.json @tludlow-instana-fork/shared-metrics false

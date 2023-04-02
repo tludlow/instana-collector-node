@@ -65,7 +65,7 @@ describe('actions/source', function () {
             testUtils.expectAtLeastOneMatching(responses, [
               response => expect(response.messageId).to.equal(messageId),
               response => expect(response.data.data).to.be.a('string'),
-              response => expect(response.data.data).to.match(/"name": "@instana\/collector"/i)
+              response => expect(response.data.data).to.match(/"name": "@tludlow-instana-fork\/collector"/i)
             ]);
           })
         )

@@ -6,7 +6,7 @@
 
 const expect = require('chai').expect;
 
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const { retry, verifyHttpRootEntry, verifyExitSpan } = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');

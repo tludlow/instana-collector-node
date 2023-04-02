@@ -9,8 +9,8 @@ const { expect } = require('chai');
 const path = require('path');
 const rimraf = require('rimraf');
 
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
@@ -57,7 +57,7 @@ mochaSuiteFn('tracing a babel/typescript setup', function () {
   });
   ProcessControls.setUpHooks(controls);
 
-  describe('@instana/collector used in a babel-transpiled typescript app', function () {
+  describe('@tludlow-instana-fork/collector used in a babel-transpiled typescript app', function () {
     it('should trace when imported with workaround according to our docs', () =>
       controls
         .sendRequest({

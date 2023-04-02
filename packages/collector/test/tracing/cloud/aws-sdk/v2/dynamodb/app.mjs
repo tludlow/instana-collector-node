@@ -9,7 +9,7 @@ const agentPort = process.env.INSTANA_AGENT_PORT || 42699;
 import request from 'request-promise';
 import delay from '../../../../../../../core/test/test_util/delay.js';
 import getAppPort from '../../../../../test_util/app-port.js';
-import logger from '@instana/core/test/test_util/log.js';
+import logger from '@tludlow-instana-fork/core/test/test_util/log.js';
 
 const port = getAppPort();
 

@@ -5,7 +5,7 @@
 'use strict';
 
 /**
- * This is the minimum required Node.js version for all @instana packages.
+ * This is the minimum required Node.js version for all @tludlow-instana-fork packages.
  */
 exports.minimumNodeJsVersion = 10;
 

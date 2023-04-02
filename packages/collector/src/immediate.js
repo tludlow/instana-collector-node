@@ -5,19 +5,19 @@
 
 'use strict';
 
-const { isNodeJsTooOld, minimumNodeJsVersion } = require('@instana/core/src/util/nodeJsVersionCheck');
+const { isNodeJsTooOld, minimumNodeJsVersion } = require('@tludlow-instana-fork/core/src/util/nodeJsVersionCheck');
 
 if (isNodeJsTooOld()) {
   // eslint-disable-next-line no-console
   console.error(
-    `The package @instana/collector requires at least Node.js ${minimumNodeJsVersion} but this process is ` +
+    `The package @tludlow-instana-fork/collector requires at least Node.js ${minimumNodeJsVersion} but this process is ` +
       `running Node.js ${process.version}. This process will not be monitored by Instana.`
   );
   // @ts-ignore TS1108 (return can only be used within a function body)
   return;
 }
 
-const { util: coreUtil } = require('@instana/core');
+const { util: coreUtil } = require('@tludlow-instana-fork/core');
 const agentOpts = require('./agent/opts');
 
 // This file can be used with NODE_OPTIONS or `node --require` to instrument a Node.js app with Instana without

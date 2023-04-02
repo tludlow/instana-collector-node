@@ -9,20 +9,20 @@
 const processIdentityProvider = require('../../../pidStore');
 
 const coreChildProcess = require('child_process');
-const { tracing } = require('@instana/core');
+const { tracing } = require('@tludlow-instana-fork/core');
 const shimmer = tracing.shimmer;
 const getCls = tracing.getCls;
 
 const selfPath = require('./selfPath');
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../../../logger').getLogger('tracing/child_process', newLogger => {
   logger = newLogger;
 });
 
 // This instruments the code that is used when edgemicro is started with the forever monitor, that is, via
-// `edgemicro forever -a start`. It adds --require /path/to/@instana/collecor/src/immediate to the arguments,
+// `edgemicro forever -a start`. It adds --require /path/to/@tludlow-instana-fork/collecor/src/immediate to the arguments,
 // effectively adding Instana instrumentation to the processes started via forever-monitor.
 //
 // There is also ./edgemicro.js, which is responsible for instrumenting the code that is used to spawn the individual
@@ -48,7 +48,7 @@ function shimSpawn(original) {
     ) {
       if (!selfPath.immediate) {
         logger.warn(
-          "Detected a child_process.spawn of 'edgemicro/app', but the path to @instana/collector is not available, " +
+          "Detected a child_process.spawn of 'edgemicro/app', but the path to @tludlow-instana-fork/collector is not available, " +
             'so this edgemicro instance will not be instrumented.'
         );
       } else {
@@ -76,7 +76,7 @@ function shimFork(original) {
     if (typeof modulePath === 'string' && bullMasterProcessMatch.test(modulePath) && args && args.execArgv) {
       if (!selfPath.immediate) {
         logger.warn(
-          "Detected a child_process.fork of 'Bull processor', but the path to @instana/collector is not available, " +
+          "Detected a child_process.fork of 'Bull processor', but the path to @tludlow-instana-fork/collector is not available, " +
             'so this Bull processor instance will not be instrumented.'
         );
       } else {

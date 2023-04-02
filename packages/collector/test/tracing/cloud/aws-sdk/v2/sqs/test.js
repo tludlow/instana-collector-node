@@ -11,8 +11,8 @@ const semver = require('semver');
 const path = require('path');
 const { expect } = require('chai');
 const { fail } = expect;
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../../../core/test/config');
 const {
   expectExactlyOneMatching,
@@ -24,7 +24,10 @@ const {
 const ProcessControls = require('../../../../../test_util/ProcessControls');
 const globalAgent = require('../../../../../globalAgent');
 const { sendSnsNotificationToSqsQueue } = require('./sendNonInstrumented');
-const { verifyHttpRootEntry, verifyHttpExit } = require('@instana/core/test/test_util/common_verifications');
+const {
+  verifyHttpRootEntry,
+  verifyHttpExit
+} = require('@tludlow-instana-fork/core/test/test_util/common_verifications');
 const defaultPrefix = 'https://sqs.us-east-2.amazonaws.com/410797082306/';
 const queueUrlPrefix = process.env.SQS_QUEUE_URL_PREFIX || defaultPrefix;
 
@@ -39,8 +42,12 @@ const receivingMethods = ['callback', 'promise', 'async'];
 const queueNames = [queueName, `${queueName}-consumer`, `${queueName}-batch`];
 const queueURLs = queueNames.map(name => `${queueUrlPrefix}${name}`);
 
-const getNextSendMethod = require('@instana/core/test/test_util/circular_list').getCircularList(sendingMethods);
-const getNextReceiveMethod = require('@instana/core/test/test_util/circular_list').getCircularList(receivingMethods);
+const getNextSendMethod = require('@tludlow-instana-fork/core/test/test_util/circular_list').getCircularList(
+  sendingMethods
+);
+const getNextReceiveMethod = require('@tludlow-instana-fork/core/test/test_util/circular_list').getCircularList(
+  receivingMethods
+);
 
 if (!supportedVersion(process.versions.node)) {
   mochaSuiteFn = describe.skip;

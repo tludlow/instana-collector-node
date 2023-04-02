@@ -24,18 +24,21 @@ const { expect } = require('chai');
 const { fail } = expect;
 const {
   tracing: { constants }
-} = require('@instana/core');
+} = require('@tludlow-instana-fork/core');
 
 const {
   tracing: { supportedVersion }
-} = require('@instana/core');
+} = require('@tludlow-instana-fork/core');
 
 const semver = require('semver');
 const config = require('../../../../../core/test/config');
 const { expectExactlyOneMatching, retry, delay, stringifyItems } = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
 const globalAgent = require('../../../globalAgent');
-const { verifyHttpRootEntry, verifyHttpExit } = require('@instana/core/test/test_util/common_verifications');
+const {
+  verifyHttpRootEntry,
+  verifyHttpExit
+} = require('@tludlow-instana-fork/core/test/test_util/common_verifications');
 
 let mochaSuiteFn;
 

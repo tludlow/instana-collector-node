@@ -10,7 +10,7 @@ const semver = require('semver');
 const { expect } = require('chai');
 const { cleanup } = require('./util');
 const { fail } = expect;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../../../core/test/config');
 const { retry, stringifyItems, delay } = require('../../../../../../../core/test/test_util');
 const ProcessControls = require('../../../../../test_util/ProcessControls');
@@ -19,7 +19,7 @@ const {
   verifyHttpRootEntry,
   verifyHttpExit,
   verifyExitSpan
-} = require('@instana/core/test/test_util/common_verifications');
+} = require('@tludlow-instana-fork/core/test/test_util/common_verifications');
 const { promisifyNonSequentialCases } = require('../promisify_non_sequential');
 
 let bucketName = 'nodejs-team';
@@ -48,7 +48,9 @@ const availableOperations = [
   'deleteBucket'
 ];
 
-const getNextCallMethod = require('@instana/core/test/test_util/circular_list').getCircularList(requestMethods);
+const getNextCallMethod = require('@tludlow-instana-fork/core/test/test_util/circular_list').getCircularList(
+  requestMethods
+);
 
 if (!supportedVersion(process.versions.node)) {
   mochaSuiteFn = describe.skip;

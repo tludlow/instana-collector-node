@@ -9,10 +9,10 @@ const {
   secrets,
   tracing,
   util: { ensureNestedObjectExists }
-} = require('@instana/core');
+} = require('@tludlow-instana-fork/core');
 const { constants: tracingConstants } = tracing;
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('announceCycle/unannounced', newLogger => {
   logger = newLogger;
@@ -36,7 +36,7 @@ const maxRetryDelay = 60 * 1000; // one minute
 /**
  * @typedef {Object} SecretsConfig
  * @property {Array.<string>} list
- * @property {import('@instana/core/src/secrets').MatchingOptions} matcher
+ * @property {import('@tludlow-instana-fork/core/src/secrets').MatchingOptions} matcher
  */
 
 /**

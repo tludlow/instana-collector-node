@@ -9,7 +9,7 @@ const instana = require('../../..')();
 
 const express = require('express');
 const morgan = require('morgan');
-const { delay, getLogger } = require('@instana/core/test/test_util');
+const { delay, getLogger } = require('@tludlow-instana-fork/core/test/test_util');
 const port = require('../../test_util/app-port')();
 const app = express();
 const logPrefix = `SDK entry span context (${process.pid}):\t`;

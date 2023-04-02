@@ -11,10 +11,10 @@ const path = require('path');
 
 const CountDownLatch = require('./CountDownLatch');
 
-let logger = require('@instana/core').logger.getLogger('metrics');
+let logger = require('@tludlow-instana-fork/core').logger.getLogger('metrics');
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger} _logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} _logger
  */
 exports.setLogger = function setLogger(_logger) {
   logger = _logger;

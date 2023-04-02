@@ -8,16 +8,16 @@
 const path = require('path');
 const expect = require('chai').expect;
 
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
-const config = require('@instana/core/test/config');
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
+const config = require('@tludlow-instana-fork/core/test/config');
 const {
   delay,
   expectAtLeastOneMatching,
   getCircularList,
   getSpansByName,
   retry
-} = require('@instana/core/test/test_util');
+} = require('@tludlow-instana-fork/core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
 const globalAgent = require('../../../globalAgent');
 const { AgentStubControls } = require('../../../apps/agentStubControls');

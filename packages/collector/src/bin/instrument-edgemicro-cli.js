@@ -16,11 +16,11 @@
 //
 // Thus, there is no user controlled code when that Node.js process is starting up, and in turn our usual installation
 // documented at https://www.ibm.com/docs/de/obi/current?topic=nodejs-collector-installation can not be performed (in particular, there
-// is no user controlled code to put the require('@instana/collector')(); into.
+// is no user controlled code to put the require('@tludlow-instana-fork/collector')(); into.
 //
 // The purpose of this executable is to fill this gap. It needs to be called after the edgemicro package has been
-// installed. The package @instana/collector also needs to be installed. This executable will statically instrument the
-// edgemicro main CLI source file and put the require('@instana/collector')(); into the right place. Naturally, this
+// installed. The package @tludlow-instana-fork/collector also needs to be installed. This executable will statically instrument the
+// edgemicro main CLI source file and put the require('@tludlow-instana-fork/collector')(); into the right place. Naturally, this
 // needs to be repeated after an update/reinstallation of the edgemicro package.
 //
 // This executable is not needed for installation scenarios where user code is started first that then requires for
@@ -86,11 +86,13 @@ function instrumentEdgemicroCli(edgemicroPath, collectorPath, callback) {
 
   if (!collectorPath) {
     collectorPath = selfPath.collectorPath;
-    console.log('- Path to @instana/collector has not been provided, I will assume it is:', collectorPath);
+    console.log('- Path to @tludlow-instana-fork/collector has not been provided, I will assume it is:', collectorPath);
   }
   if (typeof collectorPath !== 'string') {
     return callback(
-      new Error(`The path to @instana/collector needs to be a string but was of type ${typeof collectorPath}.`)
+      new Error(
+        `The path to @tludlow-instana-fork/collector needs to be a string but was of type ${typeof collectorPath}.`
+      )
     );
   }
 
@@ -100,13 +102,13 @@ function instrumentEdgemicroCli(edgemicroPath, collectorPath, callback) {
     edgemicroPath = path.resolve(edgemicroPath);
     console.log('    * resolved absolute path for edgemicro package:', edgemicroPath);
   }
-  console.log('    * Path to the @instana/collector:', collectorPath);
+  console.log('    * Path to the @tludlow-instana-fork/collector:', collectorPath);
   if (!path.isAbsolute(collectorPath)) {
     collectorPath = path.resolve(collectorPath);
-    console.log('    * resolved absolute path for @instana/collector:', collectorPath);
+    console.log('    * resolved absolute path for @tludlow-instana-fork/collector:', collectorPath);
   }
 
-  console.log(`- Checking if @instana/collector exists at ${collectorPath}.`);
+  console.log(`- Checking if @tludlow-instana-fork/collector exists at ${collectorPath}.`);
   fs.access(collectorPath, fs.constants.F_OK, fsAccessError => {
     if (fsAccessError) {
       console.log(fsAccessError);
@@ -115,17 +117,17 @@ function instrumentEdgemicroCli(edgemicroPath, collectorPath, callback) {
 
     try {
       const collectorPackageJson = require(path.join(/** @type {string} */ (collectorPath), 'package.json'));
-      if (collectorPackageJson.name !== '@instana/collector') {
+      if (collectorPackageJson.name !== '@tludlow-instana-fork/collector') {
         return callback(
           new Error(
-            `The provided path for @instana/collector does not seem to be valid, expected the package name to be @instana/collector, instead the name "${collectorPackageJson.name}" has been found.`
+            `The provided path for @tludlow-instana-fork/collector does not seem to be valid, expected the package name to be @tludlow-instana-fork/collector, instead the name "${collectorPackageJson.name}" has been found.`
           )
         );
       }
     } catch (packageJsonError) {
       return callback(
         new Error(
-          `The provided path for @instana/collector does not seem to be valid, there is no package.json at the expected location or it cannot be parsed: ${packageJsonError.stack}`
+          `The provided path for @tludlow-instana-fork/collector does not seem to be valid, there is no package.json at the expected location or it cannot be parsed: ${packageJsonError.stack}`
         )
       );
     }
