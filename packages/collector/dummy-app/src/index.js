@@ -9,11 +9,11 @@ const config = require('./config');
 
 let packageToRequire = '../..';
 if (config.mode === 'npm') {
-  packageToRequire = '@instana/collector';
+  packageToRequire = '@tludlow-instana-fork/collector';
 }
 
 if (config.collectorEnabled) {
-  console.log(`enabling @instana/collector (requiring ${packageToRequire})`);
+  console.log(`enabling @tludlow-instana-fork/collector (requiring ${packageToRequire})`);
   require(packageToRequire)({
     level: 'info',
     agentPort: config.agentPort,
@@ -22,7 +22,7 @@ if (config.collectorEnabled) {
     }
   });
 } else {
-  console.log('NOT enabling @instana/collector');
+  console.log('NOT enabling @tludlow-instana-fork/collector');
 }
 
 const downstreamUrl = process.env.DOWNSTREAM_URL;

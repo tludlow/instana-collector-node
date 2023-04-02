@@ -5,6 +5,6 @@
 
 'use strict';
 
-const instanaNodeJsCore = require('@instana/core');
+const instanaNodeJsCore = require('@tludlow-instana-fork/core');
 
 exports.instrument = instanaNodeJsCore.tracing._instrument;

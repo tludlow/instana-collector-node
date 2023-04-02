@@ -5,7 +5,7 @@
 
 'use strict';
 
-let logger = require('@instana/core').logger.getLogger('shared-metrics/native-module-retry');
+let logger = require('@tludlow-instana-fork/core').logger.getLogger('shared-metrics/native-module-retry');
 
 const EventEmitter = require('events');
 const copy = require('recursive-copy');
@@ -274,7 +274,7 @@ function createNativeModulePath(opts) {
     const selfPathNormalized = selfPath.substring(0, idx + 'node_modules'.length + __dirname.length + 2);
     loadNativeAddOn.selfNodeModulesPath = path.join(selfPathNormalized, '..', '..');
   }
-  // Find nearest ancestor node_modules directory. Since we use a scoped module (@instana/something) as the reference
+  // Find nearest ancestor node_modules directory. Since we use a scoped module (@tludlow-instana-fork/something) as the reference
   // we need to go up two directory levels.
   opts.nativeModuleParentPath = loadNativeAddOn.selfNodeModulesPath;
   opts.nativeModulePath = path.join(loadNativeAddOn.selfNodeModulesPath, opts.nativeModuleName);
@@ -285,7 +285,7 @@ loadNativeAddOn.setLogger = setLogger;
 loadNativeAddOn.selfNodeModulesPath = '';
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger} _logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} _logger
  */
 function setLogger(_logger) {
   logger = _logger;

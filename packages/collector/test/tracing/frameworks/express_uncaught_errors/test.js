@@ -6,8 +6,8 @@
 'use strict';
 
 const expect = require('chai').expect;
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const tracingUtil = require('../../../../../core/src/tracing/tracingUtil');
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');

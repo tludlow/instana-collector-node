@@ -7,7 +7,7 @@
 
 const expect = require('chai').expect;
 
-const testUtils = require('@instana/core/test/test_util');
+const testUtils = require('@tludlow-instana-fork/core/test/test_util');
 const memory = require('../src/memory');
 
 describe('metrics.memory', () => {

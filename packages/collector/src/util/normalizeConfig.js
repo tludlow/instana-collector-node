@@ -23,7 +23,7 @@ const defaults = {
  * @property {Object.<string, *>} [tracing]
  * @property {boolean | string} [autoProfile]
  * @property {boolean} [reportUnhandledPromiseRejections]
- * @property {import('@instana/core/src/logger').GenericLogger} [logger]
+ * @property {import('@tludlow-instana-fork/core/src/logger').GenericLogger} [logger]
  * @property {string | number} [level]
  */
 

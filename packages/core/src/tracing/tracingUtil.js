@@ -218,14 +218,14 @@ exports.readAttribCaseInsensitive = function readAttribCaseInsensitive(object, k
 /**
  * In rare cases, we need to require a module from dependencies of the application under test, most notably specific
  * modules from packages that we instrument. This works without issues when the application under test has installed
- * @instana/collector and friends as a normal dependency, because then our packages are located in the same node_modules
+ * @tludlow-instana-fork/collector and friends as a normal dependency, because then our packages are located in the same node_modules
  * folder and our instrumentation module will have a module load path list
  * (see https://nodejs.org/api/modules.html#modulepaths) that includes the application's node_modules folder.
  *
  * The situation is different when we are loaded via "--require" from a global installation -- this is the norm for
- * @instana/aws-fargate, @instana/google-cloud-run, the Kubernetes autotrace webhook
+ * @tludlow-instana-fork/aws-fargate, @tludlow-instana-fork/google-cloud-run, the Kubernetes autotrace webhook
  * (https://www.ibm.com/docs/de/obi/current?topic=kubernetes-instana-autotrace-webhook) or when using the global
- * installation pattern for @instana/collector that does not require modifying the source code
+ * installation pattern for @tludlow-instana-fork/collector that does not require modifying the source code
  * (see * https://www.ibm.com/docs/de/obi/current?topic=nodejs-collector-installation#global-installation).
  *
  * In these scenarios, the module load path list does not include the application's node_module folder. Thus we need to

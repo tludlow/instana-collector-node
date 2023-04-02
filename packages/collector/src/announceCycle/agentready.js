@@ -12,7 +12,7 @@ try {
   // Worker threads are not available, so we know that this is the main thread.
 }
 
-const { tracing } = require('@instana/core');
+const { tracing } = require('@tludlow-instana-fork/core');
 
 const agentConnection = require('../agentConnection');
 const agentOpts = require('../agent/opts');
@@ -33,7 +33,7 @@ let autoprofile;
 /** @type {*} */
 let profiler;
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('announceCycle/agentready', newLogger => {
   logger = newLogger;
@@ -41,12 +41,12 @@ logger = require('../logger').getLogger('announceCycle/agentready', newLogger =>
 
 if (agentOpts.autoProfile) {
   try {
-    // @ts-ignore - TS cannot find @instana/profile. TODO: @instana/autoprofile is not linted or typed
+    // @ts-ignore - TS cannot find @tludlow-instana-fork/profile. TODO: @tludlow-instana-fork/autoprofile is not linted or typed
     // eslint-disable-next-line import/no-extraneous-dependencies
-    autoprofile = require('@instana/autoprofile');
+    autoprofile = require('@tludlow-instana-fork/autoprofile');
   } catch (e) {
     logger.info(
-      'Could not load @instana/autoprofile. You will not get profiling information for this Node.js app in Instana, ' +
+      'Could not load @tludlow-instana-fork/autoprofile. You will not get profiling information for this Node.js app in Instana, ' +
         'although autoprofiling has been enabled. This typically occurs when native addons could not be built ' +
         'during module installation (npm install/yarn) or when npm install --no-optional or yarn --ignore-optional ' +
         'have been used to install dependencies. See the instructions to learn more about the requirements of the ' +

@@ -7,10 +7,10 @@
 
 const cluster = require('cluster');
 
-const requireHook = require('@instana/core').util.requireHook;
+const requireHook = require('@tludlow-instana-fork/core').util.requireHook;
 const selfPath = require('./selfPath');
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../../../logger').getLogger('tracing/edgemicro', newLogger => {
   logger = newLogger;
@@ -22,7 +22,7 @@ exports.init = function () {
 
 /**
  * This instruments the code that is responsible for starting the cluster of edgemicro workers that handle HTTP
- * requests, when edgemicro is started via `edgemicro start`. It adds --require /path/to/@instana/collecor/src/immediate
+ * requests, when edgemicro is started via `edgemicro start`. It adds --require /path/to/@tludlow-instana-fork/collecor/src/immediate
  * to the arguments, effectively adding Instana instrumentation to the worker processes at the earliest possible moment.
  *
  * There is also ./childProcess.js, which is responsible for instrumenting the code path that is used with
@@ -36,7 +36,7 @@ function instrumentReloadCluster(reloadClusterModule) {
     if (!selfPath.immediate) {
       logger.warn(
         // eslint-disable-next-line max-len
-        "Detected a call to 'edgemicro/cli/lib/reload-cluster', but the path to @instana/collector is not available, so the edgemicro workers will not be instrumented."
+        "Detected a call to 'edgemicro/cli/lib/reload-cluster', but the path to @tludlow-instana-fork/collector is not available, so the edgemicro workers will not be instrumented."
       );
       return reloadClusterModule.apply(this, arguments);
     }

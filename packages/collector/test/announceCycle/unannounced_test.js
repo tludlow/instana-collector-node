@@ -12,7 +12,7 @@ const sinonChai = require('sinon-chai');
 const expect = chai.expect;
 chai.use(sinonChai);
 
-const { secrets, tracing } = require('@instana/core');
+const { secrets, tracing } = require('@tludlow-instana-fork/core');
 const { constants } = tracing;
 const agentConnection = require('../../src/agentConnection');
 
@@ -34,7 +34,7 @@ describe('unannounced state', () => {
       secretsStub = sinon.stub(secrets);
 
       unannouncedState = proxyquire('../../src/announceCycle/unannounced', {
-        '@instana/core': {
+        '@tludlow-instana-fork/core': {
           secrets: secretsStub,
           tracing: tracingStub
         },

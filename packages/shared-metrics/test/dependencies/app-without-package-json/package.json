@@ -10,7 +10,7 @@
   "main": "app.js",
   "author": {
     "name": "Bastian Krol",
-    "email": "bastian.krol@instana.com"
+    "email": "bastian.krol@tludlow-instana-fork.com"
   },
   "license": "MIT",
   "dependencies": {

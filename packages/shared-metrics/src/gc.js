@@ -7,7 +7,7 @@
 
 const path = require('path');
 
-const slidingWindow = require('@instana/core').util.slidingWindow;
+const slidingWindow = require('@tludlow-instana-fork/core').util.slidingWindow;
 
 const windowOpts = { duration: 1000 };
 const minorGcWindow = slidingWindow.create(windowOpts);

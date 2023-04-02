@@ -12,9 +12,9 @@ const KafkaAvro = require('kafka-avro');
 const fetch = require('node-fetch');
 const delay = require('../../../../../core/test/test_util/delay');
 const agentPort = process.env.INSTANA_AGENT_PORT || 42699;
-const { sendToParent } = require('@instana/core/test/test_util');
+const { sendToParent } = require('@tludlow-instana-fork/core/test/test_util');
 const logPrefix = `Kafka Avro Consumer (${process.pid}):\t`;
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 const express = require('express');
 const port = require('../../../test_util/app-port')();
 

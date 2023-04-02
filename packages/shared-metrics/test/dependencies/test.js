@@ -15,8 +15,8 @@ const path = require('path');
 const rimraf = require('rimraf');
 const { satisfies } = require('semver');
 
-const config = require('@instana/core/test/config');
-const { retry, runCommandSync } = require('@instana/core/test/test_util');
+const config = require('@tludlow-instana-fork/core/test/config');
+const { retry, runCommandSync } = require('@tludlow-instana-fork/core/test/test_util');
 const ProcessControls = require('../../../collector/test/test_util/ProcessControls');
 const globalAgent = require('../../../collector/test/globalAgent');
 
@@ -70,7 +70,7 @@ describe('dependencies', function () {
     // upwards.
 
     const appDir = path.join(__dirname, 'app-without-package-json');
-    const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@instana-shared-metrics-test'));
+    const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@tludlow-instana-fork-shared-metrics-test'));
     const repoRootDir = path.join(__dirname, '..', '..', '..', '..');
 
     before(async () => {
@@ -78,11 +78,11 @@ describe('dependencies', function () {
       console.log(`Copying test app from ${appDir} to ${tmpDir}.`);
       await recursiveCopy(appDir, tmpDir);
       runCommandSync('npm install --production --no-optional --no-audit', tmpDir);
-      const instanaPath = path.join(tmpDir, 'node_modules', '@instana');
+      const instanaPath = path.join(tmpDir, 'node_modules', '@tludlow-instana-fork');
       mkdirp.sync(instanaPath);
       const collectorPath = path.join(instanaPath, 'collector');
-      // We create a symlink to this repo for the @instana/collector package to be able to test with the current code
-      // base. A downside of this is that also the dev dependencies of @instana/collector and friends will be found.
+      // We create a symlink to this repo for the @tludlow-instana-fork/collector package to be able to test with the current code
+      // base. A downside of this is that also the dev dependencies of @tludlow-instana-fork/collector and friends will be found.
       symlinkSync(path.join(repoRootDir, 'packages', 'collector'), collectorPath);
       unlinkSync(path.join(tmpDir, 'package.json'));
     });
@@ -109,10 +109,10 @@ describe('dependencies', function () {
           expect(deps).to.be.an('object');
           expect(Object.keys(deps)).to.have.lengthOf(200);
 
-          expect(deps['@instana/shared-metrics']).to.exist;
-          expect(deps['@instana/core']).to.exist;
-          expect(deps['@instana/collector']).to.exist;
-          expect(deps['@instana/autoprofile']).to.exist;
+          expect(deps['@tludlow-instana-fork/shared-metrics']).to.exist;
+          expect(deps['@tludlow-instana-fork/core']).to.exist;
+          expect(deps['@tludlow-instana-fork/collector']).to.exist;
+          expect(deps['@tludlow-instana-fork/autoprofile']).to.exist;
 
           expectVersion(deps.fastify, '^3.20.2');
           expectVersion(deps.express, '^4.17.1');
@@ -126,16 +126,16 @@ describe('dependencies', function () {
     // (usually from a private npm registry).
     // Please see npm-installed-app/README.md for details.
     const appTgz = path.join(__dirname, 'npm-installed-app', 'npm-installed-test-app-1.0.0.tgz');
-    const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@instana-shared-metrics-test'));
+    const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@tludlow-instana-fork-shared-metrics-test'));
     const repoRootDir = path.join(__dirname, '..', '..', '..', '..');
 
     before(async () => {
       runCommandSync(`npm install --production --no-optional --no-audit ${appTgz}`, tmpDir);
-      const instanaPath = path.join(tmpDir, 'node_modules', '@instana');
+      const instanaPath = path.join(tmpDir, 'node_modules', '@tludlow-instana-fork');
       mkdirp.sync(instanaPath);
       const collectorPath = path.join(instanaPath, 'collector');
-      // We create a symlink to this repo for the @instana/collector package to be able to test with the current code
-      // base. A downside of this is that also the dev dependencies of @instana/collector and friends will be found.
+      // We create a symlink to this repo for the @tludlow-instana-fork/collector package to be able to test with the current code
+      // base. A downside of this is that also the dev dependencies of @tludlow-instana-fork/collector and friends will be found.
       symlinkSync(path.join(repoRootDir, 'packages', 'collector'), collectorPath);
     });
 
@@ -162,10 +162,10 @@ describe('dependencies', function () {
           expect(deps).to.be.an('object');
           expect(Object.keys(deps)).to.have.lengthOf(200);
 
-          expect(deps['@instana/shared-metrics']).to.exist;
-          expect(deps['@instana/core']).to.exist;
-          expect(deps['@instana/collector']).to.exist;
-          expect(deps['@instana/autoprofile']).to.exist;
+          expect(deps['@tludlow-instana-fork/shared-metrics']).to.exist;
+          expect(deps['@tludlow-instana-fork/core']).to.exist;
+          expect(deps['@tludlow-instana-fork/collector']).to.exist;
+          expect(deps['@tludlow-instana-fork/autoprofile']).to.exist;
 
           expectVersion(deps.fastify, '^3.20.2');
           expectVersion(deps.express, '^4.17.1');

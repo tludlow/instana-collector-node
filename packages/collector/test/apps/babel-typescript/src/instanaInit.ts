@@ -1,1 +1,1 @@
-require('@instana/collector')();
+require('@tludlow-instana-fork/collector')();

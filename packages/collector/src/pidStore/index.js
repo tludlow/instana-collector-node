@@ -11,7 +11,7 @@ const EventEmitter = require('events').EventEmitter;
 const internalPidStore = require('./internalPidStore');
 const agentOpts = require('../agent/opts');
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('pidStore', newLogger => {
   logger = newLogger;

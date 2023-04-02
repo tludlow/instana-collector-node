@@ -5,8 +5,8 @@
 
 'use strict';
 
-// This is no longer used as of release 1.110.3, but apparently there are setups where the version of @instana/collector
-// and @instana/core do not match, so we need to keep this around for a while for backwards compatibility.
+// This is no longer used as of release 1.110.3, but apparently there are setups where the version of @tludlow-instana-fork/collector
+// and @tludlow-instana-fork/core do not match, so we need to keep this around for a while for backwards compatibility.
 
 /**
  * @param {string} str

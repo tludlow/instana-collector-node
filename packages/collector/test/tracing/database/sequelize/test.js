@@ -8,8 +8,8 @@
 const { expect } = require('chai');
 const { fail } = require('chai').assert;
 
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');

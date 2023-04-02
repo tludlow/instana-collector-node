@@ -11,7 +11,7 @@
  * with our instrumentations using the resolve & load hook.
  *
  * Usage:
- * node --experimental-loader=@instana/collector/esm-loader.mjs server.js
+ * node --experimental-loader=@tludlow-instana-fork/collector/esm-loader.mjs server.js
  *
  * NOTE: When using ESM the customer can only configure the collector with
  *       ENV variables.

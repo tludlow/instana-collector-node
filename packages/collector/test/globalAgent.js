@@ -8,7 +8,7 @@
 // This module manages the global agent stub, that is, the agent that is kept running during the whole test suite.
 // Individual sub suites/tests can opt in to use this global instance or start and stop an agent stub on their own,
 // depending on their requirements. Using the global instance is preferred as it decreases the duration of the
-// @instana/collector test suite as a whole.
+// @tludlow-instana-fork/collector test suite as a whole.
 //
 // The module ../globalHooks_test sets up the global Mocha hooks that make sure the agent is started before running the
 // test suite and stopped afterwards.
@@ -16,12 +16,12 @@
 const { AgentStubControls } = require('./apps/agentStubControls');
 
 // The "global" mock agent (that keeps running during the whole test suite) in package collector uses port 3211 (when
-// running in the context of @instana/collector).  Individual suites/tests/ that start an agent themselves and tear it
+// running in the context of @tludlow-instana-fork/collector).  Individual suites/tests/ that start an agent themselves and tear it
 // down  afterwards use 3210. Other packages that use the global agent follow a similar pattern, see
 // test-suite-ports.md. All packages that want to use the global agent need to declare the port they use here.
 const agentPorts = {
-  '@instana/collector': 3211,
-  '@instana/shared-metrics': 7211
+  '@tludlow-instana-fork/collector': 3211,
+  '@tludlow-instana-fork/shared-metrics': 7211
 };
 
 // See https://docs.npmjs.com/cli/v8/using-npm/scripts#packagejson-vars

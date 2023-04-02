@@ -17,7 +17,7 @@ const path = require('path');
 const expressApp = express();
 
 const logPrefix = `GRPC-JS Mali Server (${process.pid}):\t`;
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 async function MakeUnaryCall(ctx) {
   pinoLogger.warn('/unary-call');

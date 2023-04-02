@@ -17,7 +17,7 @@ exports.init = () => {
 
 // This module applies a patch to the cls-hooked module (https://github.com/Jeff-Lewis/cls-hooked/). This patch fixes a
 // breakage that occurs in the following scenario:
-// * The application under monitoring uses the cls-hooked package (in addition to @instana/core),
+// * The application under monitoring uses the cls-hooked package (in addition to @tludlow-instana-fork/core),
 // * the application under monitoring binds the incoming http request object (`IncomingMessage`, which is an
 //   event emitter), via cls-hooked#bindEmitter, and
 // * the incoming request has a payload.

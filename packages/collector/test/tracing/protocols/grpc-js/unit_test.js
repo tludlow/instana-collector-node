@@ -5,7 +5,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const grpc = require('../../../../../core/src/tracing/instrumentation/protocols/grpcJs');
 const { Metadata } = require('@grpc/grpc-js');
 

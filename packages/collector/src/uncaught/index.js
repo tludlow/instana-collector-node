@@ -6,13 +6,13 @@
 'use strict';
 
 /**
- * @typedef {import('@instana/core/src/util/stackTrace').InstanaExtendedError} InstanaExtendedError
+ * @typedef {import('@tludlow-instana-fork/core/src/util/stackTrace').InstanaExtendedError} InstanaExtendedError
  */
 
 // @ts-ignore @types/serialize-error is deprecated and updating to version 8.1.0 seems to break some stuff on our side
 const serializeError = require('serialize-error');
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('util/uncaughtExceptionHandler', newLogger => {
   logger = newLogger;

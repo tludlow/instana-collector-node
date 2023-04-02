@@ -9,8 +9,8 @@ const _ = require('lodash');
 const semver = require('semver');
 const expect = require('chai').expect;
 
-const testUtils = require('@instana/core/test/test_util');
-const config = require('@instana/core/test/config');
+const testUtils = require('@tludlow-instana-fork/core/test/test_util');
+const config = require('@tludlow-instana-fork/core/test/config');
 
 const ProcessControls = require('../../../collector/test/test_util/ProcessControls');
 
@@ -33,7 +33,7 @@ mochaSuiteFn('ESM loader', function () {
     await testUtils.retry(() =>
       controls.agentControls.getAllMetrics(controls.getPid()).then(metrics => {
         const name = findMetric(metrics, ['name']);
-        expect(name).to.equal('@instana/shared-metrics');
+        expect(name).to.equal('@tludlow-instana-fork/shared-metrics');
       })
     );
   });

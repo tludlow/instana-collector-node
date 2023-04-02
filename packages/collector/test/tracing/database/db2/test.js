@@ -7,7 +7,7 @@
 const expect = require('chai').expect;
 const semver = require('semver');
 
-const { supportedVersion, constants } = require('@instana/core').tracing;
+const { supportedVersion, constants } = require('@tludlow-instana-fork/core').tracing;
 const testUtils = require('../../../../../core/test/test_util');
 const config = require('../../../../../core/test/config');
 const ProcessControls = require('../../../test_util/ProcessControls');

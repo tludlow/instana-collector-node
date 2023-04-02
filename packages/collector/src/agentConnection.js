@@ -5,15 +5,15 @@
 
 'use strict';
 
-const { atMostOnce } = require('@instana/core').util;
+const { atMostOnce } = require('@tludlow-instana-fork/core').util;
 const fs = require('fs');
-const { http } = require('@instana/core').uninstrumentedHttp;
+const { http } = require('@tludlow-instana-fork/core').uninstrumentedHttp;
 const pathUtil = require('path');
-const { propertySizes } = require('@instana/core').util;
+const { propertySizes } = require('@tludlow-instana-fork/core').util;
 
-/** @typedef {import('@instana/core/src/tracing/cls').InstanaBaseSpan} InstanaBaseSpan */
+/** @typedef {import('@tludlow-instana-fork/core/src/tracing/cls').InstanaBaseSpan} InstanaBaseSpan */
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('./logger').getLogger('agentConnection', newLogger => {
   logger = newLogger;
@@ -343,7 +343,7 @@ exports.sendAgentResponseToAgent = function sendAgentResponseToAgent(messageId, 
 };
 
 /**
- * @param {import('@instana/core/src/tracing').TracingMetrics} tracingMetrics
+ * @param {import('@tludlow-instana-fork/core/src/tracing').TracingMetrics} tracingMetrics
  * @param {(...args: *) => *} cb
  */
 exports.sendTracingMetricsToAgent = function sendTracingMetricsToAgent(tracingMetrics, cb) {

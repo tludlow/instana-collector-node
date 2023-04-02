@@ -17,13 +17,13 @@ try {
 }
 
 const bunyan = require('bunyan');
-const { logger } = require('@instana/core');
+const { logger } = require('@tludlow-instana-fork/core');
 
 const bunyanToAgentStream = require('./agent/bunyanToAgentStream');
 
-/** @type {bunyan | import('@instana/core/src/logger').GenericLogger} */
+/** @type {bunyan | import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let parentLogger = null;
-/** @type {Object.<string, (logger: import('@instana/core/src/logger').GenericLogger) => *>} */
+/** @type {Object.<string, (logger: import('@tludlow-instana-fork/core/src/logger').GenericLogger) => *>} */
 const registry = {};
 
 /**
@@ -45,7 +45,7 @@ exports.init = function init(config, isReInit) {
     // No custom logger has been provided via config, we create a new bunyan logger as the parent logger for all loggers
     // we create later on.
     parentLogger = bunyan.createLogger({
-      name: '@instana/collector',
+      name: '@tludlow-instana-fork/collector',
       thread: threadId,
       __in: 1
     });
@@ -74,15 +74,15 @@ exports.init = function init(config, isReInit) {
       const reInitFn = registry[loggerName];
       reInitFn(exports.getLogger(loggerName));
     });
-    // cascade re-init to @instana/core
+    // cascade re-init to @tludlow-instana-fork/core
     logger.init(config);
   }
 };
 
 /**
  * @param {string} loggerName
- * @param {(logger: import('@instana/core/src/logger').GenericLogger) => *} [reInitFn]
- * @returns {import('@instana/core/src/logger').GenericLogger}
+ * @param {(logger: import('@tludlow-instana-fork/core/src/logger').GenericLogger) => *} [reInitFn]
+ * @returns {import('@tludlow-instana-fork/core/src/logger').GenericLogger}
  */
 exports.getLogger = function getLogger(loggerName, reInitFn) {
   if (!parentLogger) {
@@ -119,7 +119,7 @@ function isBunyan(_logger) {
 }
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger | *} _logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger | *} _logger
  * @returns {boolean}
  */
 function hasLoggingFunctions(_logger) {

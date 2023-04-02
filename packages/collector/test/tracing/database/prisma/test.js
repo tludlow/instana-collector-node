@@ -11,7 +11,7 @@ const recursiveCopy = require('recursive-copy');
 const rimraf = require('util').promisify(require('rimraf'));
 const semver = require('semver');
 
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const { retry, verifyHttpRootEntry, verifyExitSpan } = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');

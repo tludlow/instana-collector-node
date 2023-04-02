@@ -7,8 +7,8 @@
 const path = require('path');
 const expect = require('chai').expect;
 
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
@@ -54,7 +54,7 @@ mochaSuiteFn('tracing/tsoa', function () {
         method: 'POST',
         path: '/api/users',
         body: {
-          email: 'test@instana.test',
+          email: 'test@tludlow-instana-fork.test',
           name: 'Test 1',
           phoneNumbers: []
         }
@@ -79,7 +79,7 @@ mochaSuiteFn('tracing/tsoa', function () {
         method: 'POST',
         path: '/api/users',
         body: {
-          email: 'test@instana.test'
+          email: 'test@tludlow-instana-fork.test'
         }
       };
 
@@ -128,7 +128,7 @@ mochaSuiteFn('tracing/tsoa', function () {
         method: 'POST',
         path: '/api/users/error/22',
         body: {
-          email: 'test@instana.test',
+          email: 'test@tludlow-instana-fork.test',
           name: 'Test 1',
           phoneNumbers: []
         }

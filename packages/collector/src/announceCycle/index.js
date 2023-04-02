@@ -16,7 +16,7 @@
  * @property {(ctx?: AnnounceCycleContext) => void} leave
  */
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('announceCycle', newLogger => {
   logger = newLogger;

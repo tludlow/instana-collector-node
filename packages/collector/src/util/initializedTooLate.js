@@ -5,13 +5,14 @@
 
 'use strict';
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('util/initializedTooLate', newLogger => {
   logger = newLogger;
 });
 
-const hasThePackageBeenInitializedTooLate = require('@instana/core').util.hasThePackageBeenInitializedTooLate;
+const hasThePackageBeenInitializedTooLate =
+  require('@tludlow-instana-fork/core').util.hasThePackageBeenInitializedTooLate;
 const agentConnection = require('../agentConnection');
 
 let warningHasBeenLogged = false;
@@ -20,7 +21,7 @@ exports.check = function check() {
   if (hasThePackageBeenInitializedTooLate()) {
     if (!warningHasBeenLogged) {
       logger.warn(
-        'It seems you have initialized the @instana/collector package too late. Please check our documentation on ' +
+        'It seems you have initialized the @tludlow-instana-fork/collector package too late. Please check our documentation on ' +
           'that, in particular ' +
           // eslint-disable-next-line max-len
           'https://www.ibm.com/docs/de/obi/current?topic=nodejs-collector-installation#installing-the-nodejs-collector-package and ' +

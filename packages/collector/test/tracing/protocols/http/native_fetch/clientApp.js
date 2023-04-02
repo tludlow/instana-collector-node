@@ -29,7 +29,7 @@ const baseUrl = `http://localhost:${serverPort}`;
 
 const logPrefix = `Native Fetch Client (${process.pid}):\t`;
 
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 if (process.env.WITH_STDOUT) {
   app.use(morgan(`${logPrefix}:method :url :status`));

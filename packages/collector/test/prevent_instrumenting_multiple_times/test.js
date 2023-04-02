@@ -10,12 +10,12 @@ const os = require('os');
 const path = require('path');
 const rimraf = require('rimraf');
 
-const config = require('@instana/core/test/config');
-const { delay, retry, runCommandSync } = require('@instana/core/test/test_util');
+const config = require('@tludlow-instana-fork/core/test/config');
+const { delay, retry, runCommandSync } = require('@tludlow-instana-fork/core/test/test_util');
 const globalAgent = require('../globalAgent');
 const ProcessControls = require('../test_util/ProcessControls');
 
-describe('prevent initializing @instana/collector multiple times', function () {
+describe('prevent initializing @tludlow-instana-fork/collector multiple times', function () {
   // The tests in this suite include running npm install and on CI we have observed that this can take roughly
   // two minutes (!) sometimes, so we go with a large timeout. Base timeout on CI is 30 seconds, with
   // factor 6 this allows for test durations up to three minutes.
@@ -24,11 +24,18 @@ describe('prevent initializing @instana/collector multiple times', function () {
   globalAgent.setUpCleanUpHooks();
   const agentControls = globalAgent.instance;
 
-  const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@instana-collector-test-prevent-multiple-init'));
-  const pathToSeparateInstanaCollector = path.join(tmpDir, 'node_modules', '@instana', 'collector', 'src', 'immediate');
+  const tmpDir = mkdtempSync(path.join(os.tmpdir(), '@tludlow-instana-fork-collector-test-prevent-multiple-init'));
+  const pathToSeparateInstanaCollector = path.join(
+    tmpDir,
+    'node_modules',
+    '@tludlow-instana-fork',
+    'collector',
+    'src',
+    'immediate'
+  );
 
   before(() => {
-    runCommandSync('npm install --production --no-optional --no-audit @instana/collector', tmpDir);
+    runCommandSync('npm install --production --no-optional --no-audit @tludlow-instana-fork/collector', tmpDir);
   });
 
   after(done => {

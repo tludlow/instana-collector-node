@@ -8,7 +8,7 @@ const path = require('path');
 const expect = require('chai').expect;
 const semver = require('semver');
 
-const constants = require('@instana/core').tracing.constants;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
 const config = require('../../../../../core/test/config');
 const delay = require('../../../../../core/test/test_util/delay');
 const { expectExactlyOneMatching, getSpansByName, retry } = require('../../../../../core/test/test_util');

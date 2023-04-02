@@ -5,12 +5,12 @@
 
 'use strict';
 
-const { requireHook } = require('@instana/core').util;
+const { requireHook } = require('@tludlow-instana-fork/core').util;
 
-let logger = require('@instana/core').logger.getLogger('metrics');
+let logger = require('@tludlow-instana-fork/core').logger.getLogger('metrics');
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger} _logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} _logger
  */
 exports.setLogger = function setLogger(_logger) {
   logger = _logger;
@@ -38,7 +38,7 @@ requireHook.onModuleLoad(
 );
 
 /**
- * @param {import('@instana/core/src/util/normalizeConfig').InstanaConfig} config
+ * @param {import('@tludlow-instana-fork/core/src/util/normalizeConfig').InstanaConfig} config
  */
 exports.activate = function activate(config) {
   timeBetweenHealthcheckCalls = config.metrics.timeBetweenHealthcheckCalls;

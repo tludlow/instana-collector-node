@@ -16,7 +16,7 @@ const logPrefix = `AWS SDK v2 DynamoDB (${process.pid}):\t`;
 AWS.config.update({ region: 'us-east-2' });
 const dynamoDB = new AWS.DynamoDB();
 const tableName = process.env.AWS_DYNAMODB_TABLE_NAME || 'nodejs-team';
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 const tableCreationParams = {
   TableName: tableName,

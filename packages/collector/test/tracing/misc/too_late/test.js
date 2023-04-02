@@ -10,8 +10,8 @@ const {
   assert: { fail }
 } = require('chai');
 
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const testUtils = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
@@ -27,7 +27,7 @@ mochaSuiteFn('tracing/too late', function () {
 
   const EXAMPLE_MODULE = 'mysql';
 
-  describe(`@instana/collector is initialized too late (choosing ${EXAMPLE_MODULE} as an example)`, function () {
+  describe(`@tludlow-instana-fork/collector is initialized too late (choosing ${EXAMPLE_MODULE} as an example)`, function () {
     const controls = new ProcessControls({
       dirname: __dirname,
       useGlobalAgent: true,
@@ -36,7 +36,7 @@ mochaSuiteFn('tracing/too late', function () {
       }
     }).registerTestHooks();
 
-    it(`should warn when module ${EXAMPLE_MODULE} has been require before @instana/collector`, () =>
+    it(`should warn when module ${EXAMPLE_MODULE} has been require before @tludlow-instana-fork/collector`, () =>
       controls
         .sendRequest({
           path: '/'
@@ -96,7 +96,7 @@ mochaSuiteFn('tracing/too late', function () {
         ));
   });
 
-  describe('@instana/collector is initialized properly', () => {
+  describe('@tludlow-instana-fork/collector is initialized properly', () => {
     const controls = new ProcessControls({
       dirname: __dirname,
       useGlobalAgent: true

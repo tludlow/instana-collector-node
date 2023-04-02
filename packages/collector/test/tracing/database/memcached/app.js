@@ -13,7 +13,7 @@ const port = require('../../../test_util/app-port')();
 const agentPort = process.env.INSTANA_AGENT_PORT || 42699;
 const fetch = require('node-fetch');
 const logPrefix = `Memcached (${process.pid}):\t`;
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 const Memcached = require('memcached');
 const memcached = new Memcached(process.env.MEMCACHED || 'localhost:11211');
 

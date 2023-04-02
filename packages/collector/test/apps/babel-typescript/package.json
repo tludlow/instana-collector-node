@@ -1,7 +1,7 @@
 {
   "name": "babel-example-app-with-instana",
   "version": "1.0.0",
-  "description": "An example (and a test) for how to integrate @instana/collector into a babel app",
+  "description": "An example (and a test) for how to integrate @tludlow-instana-fork/collector into a babel app",
   "license": "MIT",
   "scripts": {
     "type-check": "tsc --noEmit",
@@ -29,6 +29,6 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "@instana/collector": "latest"
+    "@tludlow-instana-fork/collector": "latest"
   }
 }

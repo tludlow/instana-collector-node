@@ -5,12 +5,12 @@
 
 'use strict';
 
-const { isNodeJsTooOld, minimumNodeJsVersion } = require('@instana/core/src/util/nodeJsVersionCheck');
+const { isNodeJsTooOld, minimumNodeJsVersion } = require('@tludlow-instana-fork/core/src/util/nodeJsVersionCheck');
 
 if (isNodeJsTooOld()) {
   // eslint-disable-next-line no-console
   console.error(
-    `The package @instana/collector requires at least Node.js ${minimumNodeJsVersion} but this process is ` +
+    `The package @tludlow-instana-fork/collector requires at least Node.js ${minimumNodeJsVersion} but this process is ` +
       `running on Node.js ${process.version}. This process will not be monitored by Instana.`
   );
   module.exports = function noOp() {};
@@ -26,8 +26,8 @@ try {
 }
 
 const path = require('path');
-const instanaNodeJsCore = require('@instana/core');
-const instanaSharedMetrics = require('@instana/shared-metrics');
+const instanaNodeJsCore = require('@tludlow-instana-fork/core');
+const instanaSharedMetrics = require('@tludlow-instana-fork/shared-metrics');
 
 require('./tracing'); // load additional instrumentations
 const log = require('./logger');
@@ -46,12 +46,12 @@ let config;
 function init(_config) {
   // @ts-ignore: Property '__INSTANA_INITIALIZED' does not exist on type global
   if (global.__INSTANA_INITIALIZED) {
-    // Prevent initializing @instana/collector multiple times for the same process: @instana/collector has already been
-    // initialized, potentially from a different installation of @instana/collector somewhere else in the file system.
+    // Prevent initializing @tludlow-instana-fork/collector multiple times for the same process: @tludlow-instana-fork/collector has already been
+    // initialized, potentially from a different installation of @tludlow-instana-fork/collector somewhere else in the file system.
     // Find that module in the require cache and return its exports (this is necessary to make sure calls to our API
     // work as expected).
     let collectorIndexCacheKey = Object.keys(require.cache).find(
-      cacheKey => cacheKey.indexOf('/@instana/collector/src/index.js') >= 0
+      cacheKey => cacheKey.indexOf('/@tludlow-instana-fork/collector/src/index.js') >= 0
     );
 
     // Requiring the collector package twice in the test package using a relative path such as `../../..`
@@ -66,7 +66,7 @@ function init(_config) {
     } else {
       // eslint-disable-next-line no-console
       console.error(
-        "Warning: Instana has already been initialized but the module @instana/collector is not present in Node.js' " +
+        "Warning: Instana has already been initialized but the module @tludlow-instana-fork/collector is not present in Node.js' " +
           'module cache. The Instana API will not be available.'
       );
       return init;
@@ -98,7 +98,10 @@ function init(_config) {
     require('./metrics').init(config);
   }
 
-  logger.info('@instana/collector module version:', require(path.join(__dirname, '..', 'package.json')).version);
+  logger.info(
+    '@tludlow-instana-fork/collector module version:',
+    require(path.join(__dirname, '..', 'package.json')).version
+  );
   require('./announceCycle').start();
 
   return init;
@@ -117,7 +120,7 @@ init.isConnected = function isConnected() {
 };
 
 /**
- * @param {import('@instana/core/src/logger').GenericLogger} logger
+ * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} logger
  */
 init.setLogger = function setLogger(logger) {
   // NOTE: Override our default logger with customer's logger

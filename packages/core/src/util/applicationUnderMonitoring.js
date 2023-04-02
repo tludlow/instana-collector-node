@@ -171,7 +171,7 @@ function getMainPackageJsonPathStartingAtDirectory(startDirectory, cb) {
   });
 }
 
-// Backward compat fix for @instana/collector@<1.99.0 plus latest @instana/core, see
+// Backward compat fix for @tludlow-instana-fork/collector@<1.99.0 plus latest @tludlow-instana-fork/core, see
 // packages/collector/test/backward_compat/test.js for more details.
 // @ts-ignore
 function getMainPackageJson(startDirectory, cb) {
@@ -182,7 +182,7 @@ function getMainPackageJson(startDirectory, cb) {
   }
 }
 
-// Backward compat fix for @instana/collector@<1.99.0 plus latest @instana/core, see
+// Backward compat fix for @tludlow-instana-fork/collector@<1.99.0 plus latest @tludlow-instana-fork/core, see
 // packages/collector/test/backward_compat/test.js for more details.
 // @ts-ignore
 function getMainPackageJsonPath(startDirectory, cb) {
@@ -224,7 +224,7 @@ function searchForPackageJsonInDirectoryTreeUpwards(dir, cb) {
     // If the package.json file actually exists, we also need to make sure that there is a node_modules directory
     // located next to it. This way we can be relatively certain that we did not encounter a component package.json
     // (as used by React for example). It is highly unlikely that the application has no dependencies, because
-    // @instana/core is a dependency itself.
+    // @tludlow-instana-fork/core is a dependency itself.
     if (stats.isFile()) {
       const potentialNodeModulesDir = path.join(dir, 'node_modules');
       fs.stat(potentialNodeModulesDir, (statErr, potentialNodeModulesDirStats) => {

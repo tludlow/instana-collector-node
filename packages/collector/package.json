@@ -1,10 +1,10 @@
 {
-  "name": "@instana/collector",
-  "version": "2.20.1",
-  "description": "The Instana Node.js metrics and trace data collector",
+  "name": "@tludlow-instana-fork/collector",
+  "version": "3.0.1",
+  "description": "Forked version of The Instana Node.js metrics and trace data collector to add winston logger info logs",
   "author": {
     "name": "Ben Ripkens",
-    "email": "ben@instana.com"
+    "email": "ben@tludlow-instana-fork.com"
   },
   "homepage": "https://github.com/instana/nodejs/blob/main/packages/collector/README.md",
   "license": "MIT",
@@ -135,14 +135,14 @@
     "url": "https://github.com/instana/nodejs/issues"
   },
   "dependencies": {
-    "@instana/core": "2.20.1",
-    "@instana/shared-metrics": "2.20.1",
+    "@tludlow-instana-fork/core": "3.0.1",
+    "@tludlow-instana-fork/shared-metrics": "3.0.1",
     "bunyan": "^1.8.15",
     "semver": "7.3.3",
     "serialize-error": "^3.0.0"
   },
   "optionalDependencies": {
-    "@instana/autoprofile": "2.20.1"
+    "@tludlow-instana-fork/autoprofile": "3.0.1"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",

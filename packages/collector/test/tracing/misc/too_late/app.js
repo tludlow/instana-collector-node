@@ -11,13 +11,13 @@ let http;
 let httpGet;
 
 if (process.env.REQUIRE_BEFORE_COLLECTOR) {
-  // Deliberately initializing @instana/collector too late, that is, after requiring other modules.
+  // Deliberately initializing @tludlow-instana-fork/collector too late, that is, after requiring other modules.
   http = require('http');
   httpGet = http.get;
   require(process.env.REQUIRE_BEFORE_COLLECTOR);
   require('../../../..')();
 } else {
-  // Initializing @instana/collector properly, before other require statements.
+  // Initializing @tludlow-instana-fork/collector properly, before other require statements.
   require('../../../..')();
   http = require('http');
   httpGet = http.get;

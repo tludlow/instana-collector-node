@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0 (2023-04-02)
+
+
+### Bug Fixes
+
+* remove npm package instana-nodejs-sensor ([5fb9f18](https://github.com/instana/nodejs/commit/5fb9f1807998fb3335652d135eb167dc13f9221d))
+* **deps:** bumped node-fetch to ^2.6.7 (security patch) ([#465](https://github.com/instana/nodejs/issues/465)) ([e8c622b](https://github.com/instana/nodejs/commit/e8c622bd976f9b552572cfed927cb11876315979))
+* **fargate, google-cloud-run:** filter environment variables secrets ([43f1624](https://github.com/instana/nodejs/commit/43f1624ed87f1eec6e9db192ae8d7e23873ad9ad))
+* depend on exact versions of [@instana](https://github.com/instana) packages, not a version range ([9caa708](https://github.com/instana/nodejs/commit/9caa708ac164d69f3f5fa7645c504d54813aedae))
+
+
+### Features
+
+* **google cloud run:** exclude minimal revision data from compression ([fcfa851](https://github.com/instana/nodejs/commit/fcfa851fa86bf5dc4292aec58435e601db2cdee7))
+* **google cloud run:** experimental support ([64b34e4](https://github.com/instana/nodejs/commit/64b34e4e7f11f0205bdba53a521ab819470e4286))
+* **google cloud run:** update google cloud run support ([afedbd0](https://github.com/instana/nodejs/commit/afedbd017d558a5519e1338a2f25e5032c82d003))
+* **metrics:** limit the number of collected dependencies ([2970bef](https://github.com/instana/nodejs/commit/2970bef8d7d750d6b48f0b1b52f30f4e87b117ec))
+* **tracing:** instrument @google-cloud/pubsub ([b4b25f0](https://github.com/instana/nodejs/commit/b4b25f0ca908ab334276ede3181a9a709d16d952))
+
+
+### BREAKING CHANGES
+
+* Starting with version 2.0.0, consumers of the package who
+still use the deprecated package name instana-nodejs-sensor will need to follow
+https://www.ibm.com/docs/en/obi/current?topic=nodejs-collector-installation#change-of-package-name
+to receive updates in the future.
+
+
+
+
+
 ## [2.20.1](https://github.com/instana/nodejs/compare/v2.20.0...v2.20.1) (2023-03-30)
 
 **Note:** Version bump only for package @instana/metrics-util

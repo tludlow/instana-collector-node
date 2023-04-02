@@ -5,7 +5,7 @@
 
 'use strict';
 
-require('@instana/core').registerAdditionalInstrumentations([
+require('@tludlow-instana-fork/core').registerAdditionalInstrumentations([
   require('./instrumentation/process/edgemicro'),
   require('./instrumentation/process/childProcess')
 ]);

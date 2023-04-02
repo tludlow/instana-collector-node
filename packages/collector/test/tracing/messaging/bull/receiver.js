@@ -7,7 +7,7 @@
 
 require('../../../..')();
 
-const { sendToParent } = require('@instana/core/test/test_util');
+const { sendToParent } = require('@tludlow-instana-fork/core/test/test_util');
 const logPrefix = `Bull (${process.pid}):\t`;
 const Queue = require('bull');
 const express = require('express');
@@ -21,7 +21,7 @@ const receiver = new Queue(queueName, redisServer);
 const bullJobName = process.env.BULL_JOB_NAME || 'steve';
 const jobNameEnabled = process.env.BULL_JOB_NAME_ENABLED === 'true';
 const concurrencyEnabled = process.env.BULL_CONCURRENCY_ENABLED === 'true';
-const log = require('@instana/core/test/test_util/log').getLogger(logPrefix);
+const log = require('@tludlow-instana-fork/core/test/test_util/log').getLogger(logPrefix);
 
 /**
  * Make sure to match the sender and receiver when it comes to named jobs.

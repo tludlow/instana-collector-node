@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0 (2023-04-02)
+
+
+### Bug Fixes
+
+* depend on exact versions of [@instana](https://github.com/instana) packages, not a version range ([9caa708](https://github.com/instana/nodejs/commit/9caa708ac164d69f3f5fa7645c504d54813aedae))
+* remove npm package instana-nodejs-sensor ([5fb9f18](https://github.com/instana/nodejs/commit/5fb9f1807998fb3335652d135eb167dc13f9221d))
+* **lambda:** cache target handler across invocations ([65a3147](https://github.com/instana/nodejs/commit/65a314752dac579ff8ee4c52536428463bbee9d3))
+
+
+### Features
+
+* **aws-lambda:** added support for ES modules ([#653](https://github.com/instana/nodejs/issues/653)) ([75c28a9](https://github.com/instana/nodejs/commit/75c28a92fb68f3d982207b545a211b65dc4d95ce))
+* **aws-lambda:** added support for Node v16 ([718cf9f](https://github.com/instana/nodejs/commit/718cf9f69de3062964a28390900dc3f158557cdf))
+* **lambda:** provide auto-wrap Lambda handler ([57952ea](https://github.com/instana/nodejs/commit/57952ea78f414f2be9aa2a714db911d69bda5c0b))
+
+
+### BREAKING CHANGES
+
+* Starting with version 2.0.0, consumers of the package who
+still use the deprecated package name instana-nodejs-sensor will need to follow
+https://www.ibm.com/docs/en/obi/current?topic=nodejs-collector-installation#change-of-package-name
+to receive updates in the future.
+
+
+
+
+
 ## [2.20.1](https://github.com/instana/nodejs/compare/v2.20.0...v2.20.1) (2023-03-30)
 
 **Note:** Version bump only for package instana-aws-lambda-auto-wrap

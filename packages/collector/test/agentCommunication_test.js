@@ -7,8 +7,8 @@
 
 const expect = require('chai').expect;
 
-const config = require('@instana/core/test/config');
-const { retry } = require('@instana/core/test/test_util');
+const config = require('@tludlow-instana-fork/core/test/config');
+const { retry } = require('@tludlow-instana-fork/core/test/test_util');
 const globalAgent = require('./globalAgent');
 const { isNodeVersionEOL } = require('../src/util/eol');
 

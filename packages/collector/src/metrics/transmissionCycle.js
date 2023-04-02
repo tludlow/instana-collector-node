@@ -5,9 +5,9 @@
 
 'use strict';
 
-const { clone, compression } = require('@instana/core').util;
+const { clone, compression } = require('@tludlow-instana-fork/core').util;
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('metrics/sender', newLogger => {
   logger = newLogger;
@@ -33,7 +33,7 @@ let transmissionDelay = 1000;
 let isActive = false;
 
 /**
- * @param {import('@instana/core/src/metrics').InstanaConfig} config
+ * @param {import('@tludlow-instana-fork/core/src/metrics').InstanaConfig} config
  */
 exports.init = function init(config) {
   transmissionDelay = config.metrics.transmissionDelay;

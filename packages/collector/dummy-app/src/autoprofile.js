@@ -9,10 +9,10 @@ const config = require('./config');
 
 let packageToRequire = '../..';
 if (config.mode === 'npm') {
-  packageToRequire = '@instana/collector';
+  packageToRequire = '@tludlow-instana-fork/collector';
 }
 
-console.log(`enabling @instana/collector (requiring ${packageToRequire})`);
+console.log(`enabling @tludlow-instana-fork/collector (requiring ${packageToRequire})`);
 require(packageToRequire)({ autoProfile: true });
 
 const fs = require('fs');

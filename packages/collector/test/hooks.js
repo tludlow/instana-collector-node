@@ -12,13 +12,13 @@
 // The globalAgent module manages an agent stub instance that can be used globally for all tests.
 
 const { startGlobalAgent, stopGlobalAgent } = require('./globalAgent');
-const isCI = require('@instana/core/test/test_util/is_ci');
+const isCI = require('@tludlow-instana-fork/core/test/test_util/is_ci');
 const fs = require('fs');
 
 exports.mochaHooks = {
   async beforeAll() {
     // eslint-disable-next-line no-console
-    console.log(`@instana/collector test suite starting at ${timestamp()}.`);
+    console.log(`@tludlow-instana-fork/collector test suite starting at ${timestamp()}.`);
     await startGlobalAgent();
   },
 

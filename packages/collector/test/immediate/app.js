@@ -5,7 +5,7 @@
 
 'use strict';
 
-// This application is deliberately not instrumented manually with require('@instana/collector'), it is meant to be used
+// This application is deliberately not instrumented manually with require('@tludlow-instana-fork/collector'), it is meant to be used
 // with NODE_OPTIONS="--require ...".
 
 const express = require('express');

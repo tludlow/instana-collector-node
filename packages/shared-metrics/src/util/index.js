@@ -9,7 +9,7 @@ const nativeModuleRetry = require('./nativeModuleRetry');
 module.exports = {
   nativeModuleRetry,
   /**
-   * @param {import('@instana/core/src/logger').GenericLogger} logger
+   * @param {import('@tludlow-instana-fork/core/src/logger').GenericLogger} logger
    */
   setLogger: function setLogger(logger) {
     nativeModuleRetry.setLogger(logger);

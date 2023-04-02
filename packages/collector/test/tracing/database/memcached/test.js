@@ -8,18 +8,18 @@
 const path = require('path');
 const { expect } = require('chai');
 const { fail } = expect;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const { retry, stringifyItems, delay } = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');
 const globalAgent = require('../../../globalAgent');
-const expectAtLeastOneMatching = require('@instana/core/test/test_util/expectAtLeastOneMatching');
-const expectExactlyOneMatching = require('@instana/core/test/test_util/expectExactlyOneMatching');
+const expectAtLeastOneMatching = require('@tludlow-instana-fork/core/test/test_util/expectAtLeastOneMatching');
+const expectExactlyOneMatching = require('@tludlow-instana-fork/core/test/test_util/expectExactlyOneMatching');
 const {
   verifyHttpRootEntry,
   verifyHttpExit,
   verifyExitSpan
-} = require('@instana/core/test/test_util/common_verifications');
+} = require('@tludlow-instana-fork/core/test/test_util/common_verifications');
 
 let mochaSuiteFn;
 

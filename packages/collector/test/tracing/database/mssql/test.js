@@ -8,8 +8,8 @@
 const errors = require('request-promise/errors');
 const expect = require('chai').expect;
 const semver = require('semver');
-const constants = require('@instana/core').tracing.constants;
-const supportedVersion = require('@instana/core').tracing.supportedVersion;
+const constants = require('@tludlow-instana-fork/core').tracing.constants;
+const supportedVersion = require('@tludlow-instana-fork/core').tracing.supportedVersion;
 const config = require('../../../../../core/test/config');
 const { expectAtLeastOneMatching, isCI, retry } = require('../../../../../core/test/test_util');
 const ProcessControls = require('../../../test_util/ProcessControls');

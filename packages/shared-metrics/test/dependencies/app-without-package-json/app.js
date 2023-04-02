@@ -10,7 +10,7 @@ if (!repoRootDir) {
   throw new Error('Mandatory environment variable INSTANA_NODES_REPO is not set.');
 }
 
-const instana = require('@instana/collector');
+const instana = require('@tludlow-instana-fork/collector');
 const dependenciesModule = require(`${repoRootDir}/packages/shared-metrics/src/dependencies`);
 dependenciesModule.MAX_DEPENDENCIES = 200;
 dependenciesModule.MAX_ATTEMPTS = 1;

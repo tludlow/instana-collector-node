@@ -129,7 +129,7 @@ describe('logger', () => {
 
     // first getLogger call should yield the default bunyan logger
     expect(logger).to.be.an.instanceOf(bunyan);
-    expect(logger.fields.name).to.equal('@instana/collector');
+    expect(logger.fields.name).to.equal('@tludlow-instana-fork/collector');
     const originalLogger = logger;
 
     const logger2 = bunyan.createLogger({ name: 'new-logger' });
@@ -147,7 +147,7 @@ describe('logger', () => {
 
     // first getLogger call should yield the default bunyan logger
     expect(logger).to.be.an.instanceOf(bunyan);
-    expect(logger.fields.name).to.equal('@instana/collector');
+    expect(logger.fields.name).to.equal('@tludlow-instana-fork/collector');
 
     const logger2 = bunyan.createLogger({ name: 'new-logger' });
     log.init({ logger: logger2 });

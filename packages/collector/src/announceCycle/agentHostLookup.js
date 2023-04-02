@@ -5,15 +5,15 @@
 
 'use strict';
 
-const { atMostOnce } = require('@instana/core').util;
+const { atMostOnce } = require('@tludlow-instana-fork/core').util;
 const { exec } = require('child_process');
-const { http } = require('@instana/core').uninstrumentedHttp;
+const { http } = require('@tludlow-instana-fork/core').uninstrumentedHttp;
 
 const agentOpts = require('../agent/opts');
 
 const EXPECTED_SERVER_HEADER = 'Instana Agent';
 
-/** @type {import('@instana/core/src/logger').GenericLogger} */
+/** @type {import('@tludlow-instana-fork/core/src/logger').GenericLogger} */
 let logger;
 logger = require('../logger').getLogger('announceCycle/agentHostLookup', newLogger => {
   logger = newLogger;

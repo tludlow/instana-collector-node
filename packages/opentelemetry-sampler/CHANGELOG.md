@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0 (2023-04-02)
+
+
+### Features
+
+* added new package @instana/opentelemetry-sampler ([#580](https://github.com/instana/nodejs/issues/580)) ([e22912a](https://github.com/instana/nodejs/commit/e22912ac582e131f50fef82443bd2160c0329289))
+
+
+
+
+
 ## [2.20.1](https://github.com/instana/nodejs/compare/v2.20.0...v2.20.1) (2023-03-30)
 
 **Note:** Version bump only for package @instana/opentelemetry-sampler
